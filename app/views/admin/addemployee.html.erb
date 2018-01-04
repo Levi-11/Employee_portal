@@ -1,0 +1,54 @@
+<% provide(:user, 'admin') %>
+<h1>Add Employee</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@employee, url: addemployee_path) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :designation %>
+      <%= f.text_field :designation, class: 'form-control' %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control', id: "email" %>
+
+      <%= f.label :phone %>
+      <%= f.text_field :phone, class: 'form-control' %>
+
+      <%= f.label :gender %>
+      <%= f.select :gender,[['Male',1],['Female',2]], class: 'form-control' %>
+
+      <%= f.label :dateofjoin, "Date of Join"%>
+      <%= f.date_field :dateofjoin, class: 'form-control' %>
+
+      <%= f.label :address %>
+      <%= f.text_field :address, class: 'form-control' %>
+
+      <%= f.label :active%><br />
+      <%= f.check_box :active,id: 'active' %><br />
+
+      <%= f.label :username %>
+      <%= f.email_field :username, class: 'form-control', id: "username" %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+      <%= f.submit "Add Employee", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    $('#email').blur(function(){
+      $('#username').val($('#email').val());
+    });
+});
+
+</script>

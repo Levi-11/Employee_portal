@@ -1,0 +1,37 @@
+<% provide(:user, 'employee') %>
+<% if logged_in? %>
+<h1>Update Details</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@employee) do |f| %>
+
+      <%= f.label :id ,"Employee Id"%>
+      <%= f.text_field :id, :value => ("RP#{@employee.id}"), class: 'form-control',readonly:"readonly" %>
+      
+      <%= f.label :designation %>
+      <%= f.text_field :designation, class: 'form-control',readonly:"readonly" %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control',readonly:"readonly" %>
+
+      <%= f.label :dateofjoin ,"Date of Join"%>
+      <%= f.date_field :dateofjoin, class: 'form-control',readonly:"readonly" %> 
+
+      <%= f.label :username %>
+      <%= f.text_field :username, class: 'form-control',readonly:"readonly" %>
+
+      <%= f.label :dateofbirth,"Date of Birth" %>
+      <%= f.date_field :dateofbirth, class: 'form-control' %>
+
+      <%= f.label :personalemail,"Personal Email" %>
+      <%= f.email_field :personalemail, class: 'form-control' %>
+
+      <%= f.label :image,"Profile Pic"%>
+      <%= f.file_field :image,class: 'form-control' %>
+
+      <%= f.submit "Update", class: "btn btn-primary" %>
+
+    <% end %>
+  </div>
+</div>
+<% end %>

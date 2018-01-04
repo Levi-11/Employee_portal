@@ -1,0 +1,30 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+#empty
+
+example:
+  name:  Example
+  email: example@mail.com
+  password_digest: <%= Employee.digest('password') %>
+  username: example@mail.com
+  active: true
+  gender: male
+  designation: developer
+  phone: 9876543210
+  dateofjoin: 2017-12-20
+  dateofbirth: 1995-12-06
+  address: sdgfbdvnkwljes gjgjghvmhg gjmhgmjmhnfnbf, utjtjhg, jhtkujtuuk
+
+admin:
+  name:  Admin
+  email: admin@mail.com
+  password_digest: <%= Employee.digest('password') %>
+  username: admin@mail.com
+  active: true
+  gender: male
+  designation: developer
+  phone: 9876543219
+  dateofjoin: 2017-12-20
+  dateofbirth: 1995-12-06
+  admin: true
+  address: sdgfbdvnkwljes gjgjghvmhg gjmhgmjmhnfnbf, utjtjhg, jhtkujtuuk

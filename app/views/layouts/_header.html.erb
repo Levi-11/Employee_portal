@@ -1,0 +1,27 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+  <%= link_to "Employee Portal",'/login', id: "logo"%>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <% if yield(:user) == "employee"%>
+          <% if logged_in? %>
+            <li>
+              <li><%= link_to "Home",   home_path %></li>
+              <li><%= link_to "Details",   edit_employee_path(current_employee) %></li>
+              <li><%= link_to "Log Out", logout_path,method: :delete %></li>
+            </li> 
+          <% end %>
+        <% elsif yield(:user) == "admin" %>
+          <% if logged_in? %>
+            <li>
+              <li><%= link_to "Home",   adminhome_path %></li>
+              <li><%= link_to "Employees",  adminemployee_path%></li>
+              <li><%= link_to "Projects",   adminproject_path %></li>
+              <li><%= link_to "Log Out",adminlogout_path,method: :delete %></li>
+            </li> 
+          <% end %>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

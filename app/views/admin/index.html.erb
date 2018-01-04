@@ -1,0 +1,30 @@
+<% provide(:user, 'admin') %>
+<% if logged_in? %>
+<table class="table table-striped">
+
+  <tr class>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Active</th>
+    <th colspan="3"></th>
+  </tr>
+
+  <% @employee.each do |employee| %>
+  <tr>
+    <td><%= link_to employee.name ,showemployee_path(:id=>employee.id) ,method: :post%></td>
+    <td><%= employee.email %></td>
+    <td><%= employee.phone %></td>
+    <td><%= employee.active %></td>
+    <td><%= link_to 'Edit', adminedit_path(:id => employee.id) %></td>
+    <td><%= link_to 'Delete', employee, method: :delete,
+                                   data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  <% end %>
+</table>
+<br>
+
+<%= link_to 'Add Employee', addemployee_path,class:"btn btn-primary pull-right" %>
+
+<%= will_paginate  @employee%>
+<% end %>
