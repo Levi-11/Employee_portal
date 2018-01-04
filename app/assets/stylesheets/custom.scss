@@ -21,7 +21,9 @@ $gray-medium-light: #eaeaea;
   @include box_sizing;
 }
 
-
+.img{
+  border-radius: 50%;
+}
 /* universal */
 
 body {

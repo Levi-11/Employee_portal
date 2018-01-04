@@ -1,5 +1,5 @@
 <% provide(:user, 'admin') %>
-<%= image_tag @employee.image.thumb.url unless @employee.image.blank?%>
+<%= image_tag @employee.image.thumb.url, :class => 'img' unless @employee.image.blank? %>
 <table class="table table-striped">
 
     <tr>

@@ -28,3 +28,18 @@ admin:
   dateofbirth: 1995-12-06
   admin: true
   address: sdgfbdvnkwljes gjgjghvmhg gjmhgmjmhnfnbf, utjtjhg, jhtkujtuuk
+
+<% 2.times do |n| %>
+employee_<%= n %>:
+  name:  <%= "Employee" %>
+  email: <%= "employee-#{n}@example.com" %>
+  password_digest: <%= Employee.digest('password') %>
+  username: <%= "employee-#{n}@example.com" %>
+  active: true
+  gender: male
+  designation: <%= "developer" %>
+  phone: <%= "#{1000000000 + n}" %>
+  dateofjoin: 2017-12-20
+  dateofbirth: 1995-12-06
+  address: sdgfbdvnkwljes gjgjghvmhg gjmhgmjmhnfnbf, utjtjhg, jhtkujtuuk
+<% end %>

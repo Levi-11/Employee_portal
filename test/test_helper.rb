@@ -17,6 +17,9 @@ class ActiveSupport::TestCase
     session[:employee_id] = employee.id
   end
 
+  def is_admin_logged_in?(admin)
+    !!admin.admin
+  end
 end
 
 class ActionDispatch::IntegrationTest
