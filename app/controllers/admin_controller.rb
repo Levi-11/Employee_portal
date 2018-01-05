@@ -9,6 +9,7 @@ class AdminController < ApplicationController
 
   def index
     #@employee=Employee.all
+    redirect_to root_path unless logged_in? && admin_logged_in?
     @employee = Employee.order("created_at DESC").paginate(page: params[:page], :per_page => 2)
   end
 

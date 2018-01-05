@@ -2,10 +2,13 @@ require 'test_helper'
 
 class AdminPageTest < ActionDispatch::IntegrationTest
   def setup
-    @employee = employees(:example)
+    @admin = employees(:admin)
   end
   test "paginate" do
-    log_in_as(@employee)
+    get adminlogin_path
+    post adminlogin_path, params: { session: { email: @admin.email,
+                                            password: 'password' } }
+    # log_in_as(@admin)
     get adminemployee_path
     assert_template 'admin/index'
     assert_select 'div.pagination'
