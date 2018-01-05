@@ -2,6 +2,7 @@ class EmployeesController < ApplicationController
 
   def home
     redirect_to root_path unless logged_in? && !admin_logged_in?
+    @employee = current_employee
   end
   
   def edit 

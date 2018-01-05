@@ -6351,3 +6351,154 @@ Processing by AdminsessionController#new as HTML
 Completed 200 OK in 68ms (Views: 66.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-01-05 19:43:50 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (264.3ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (6.6ms)
+Completed 200 OK in 3810ms (Views: 3773.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-01-05 19:44:00 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RrH6g1QSxJU3BxMjeDC004/M0sxcwHHD8kwfbFCQyxEC2vnhMcVvDPh7XNr+dE5+gX/ab6sbvZ7v2YEW3IU7uA==", "session"=>{"email"=>"pooja92@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "pooja92@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/home
+Completed 302 Found in 329ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-05 19:44:01 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (17.9ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    1: <% provide(:user, 'employee') %>
+    2: <h1>Welcome  <%= current_employee.name %></h1>
+    3: 
+    4: <%= image_tag @employee.image.thumb.url, :class => 'img' unless @employee.image.blank? %>
+  
+app/views/employees/home.html.erb:4:in `_app_views_employees_home_html_erb__3502023764551663624_69954582836060'
+Started GET "/home" for 127.0.0.1 at 2018-01-05 19:51:49 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `image' for nil:NilClass):
+    1: <% provide(:user, 'employee') %>
+    2: <h1>Welcome  <%= current_employee.name %></h1>
+    3: 
+    4: <%= image_tag @employee.image.thumb.url, :class => 'img' unless @employee.image.blank? %>
+  
+app/views/employees/home.html.erb:4:in `_app_views_employees_home_html_erb__3502023764551663624_69954684036180'
+Started GET "/home" for 127.0.0.1 at 2018-01-05 19:52:32 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 400 Bad Request in 31ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: employee):
+  
+app/controllers/employees_controller.rb:5:in `home'
+Started GET "/home" for 127.0.0.1 at 2018-01-05 19:53:14 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 400 Bad Request in 38ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/employees_controller.rb:5:in `home'
+Started GET "/home" for 127.0.0.1 at 2018-01-05 19:53:15 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/employees_controller.rb:5:in `home'
+Started GET "/home" for 127.0.0.1 at 2018-01-05 19:54:15 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 400 Bad Request in 43ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: employees):
+  
+app/controllers/employees_controller.rb:5:in `home'
+Started GET "/home" for 127.0.0.1 at 2018-01-05 19:55:18 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 41ms (ActiveRecord: 2.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Employee with 'id'=):
+  
+app/controllers/employees_controller.rb:5:in `home'
+Started GET "/home" for 127.0.0.1 at 2018-01-05 19:55:52 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 100ms (Views: 57.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-05 19:56:59 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 2762ms (Views: 2758.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-05 19:57:31 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+Completed 200 OK in 74ms (Views: 70.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-05 19:58:29 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 1775ms (Views: 1771.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-05 19:58:51 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 1760ms (Views: 1757.5ms | ActiveRecord: 0.2ms)
+
+
