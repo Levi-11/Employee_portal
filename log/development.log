@@ -3627,3 +3627,1040 @@ puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
 puma (3.11.0) lib/puma/server.rb:438:in `process_client'
 puma (3.11.0) lib/puma/server.rb:302:in `block in run'
 puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/adminlogin" for 127.0.0.1 at 2018-01-05 13:53:04 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminsessionController#new as HTML
+  Rendering adminsession/new.html.erb within layouts/application
+  Rendered adminsession/new.html.erb within layouts/application (19.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (7.6ms)
+Completed 200 OK in 520ms (Views: 510.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/adminlogin" for 127.0.0.1 at 2018-01-05 13:57:02 +0530
+Processing by AdminsessionController#new as HTML
+  Rendering adminsession/new.html.erb within layouts/application
+  Rendered adminsession/new.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 2008ms (Views: 2004.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/adminlogin" for 127.0.0.1 at 2018-01-05 13:59:16 +0530
+Processing by AdminsessionController#new as HTML
+  Rendering adminsession/new.html.erb within layouts/application
+  Rendered adminsession/new.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (5.2ms)
+Completed 200 OK in 2172ms (Views: 2170.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/adminlogin" for 127.0.0.1 at 2018-01-05 13:59:22 +0530
+Processing by AdminsessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YdbiIIXmcoLIy/W4Ca44/8Dum+w9D1p41F7dUkCyGo3bqFPbLPl/9CzBC8mbxMqeI9mtjPvXtj1iKKWAewkZVA==", "session"=>{"email"=>"lvaguez@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mEmployee Load (1.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "lvaguez@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/adminhome
+Completed 302 Found in 182ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/adminhome" for 127.0.0.1 at 2018-01-05 13:59:22 +0530
+Processing by AdminController#home as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/home.html.erb within layouts/application
+  Rendered admin/home.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 100ms (Views: 94.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/adminemployee" for 127.0.0.1 at 2018-01-05 13:59:24 +0530
+Processing by AdminController#index as HTML
+  Rendering admin/index.html.erb within layouts/application
+  [1m[36mEmployee Load (1.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  Rendered admin/index.html.erb within layouts/application (12.0ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 108ms (Views: 103.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/addemployee" for 127.0.0.1 at 2018-01-05 13:59:26 +0530
+Processing by AdminController#addemployee as HTML
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/addemployee.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.9ms)
+  Rendered admin/addemployee.html.erb within layouts/application (392.3ms)
+Completed 500 Internal Server Error in 400ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `admin_employee_url' for #<#<Class:0x007ff761974fb8>:0x007ff76097d038>
+Did you mean?  adminemployee_url
+               adminemployee_path
+               addemployee_url
+               edit_employee_url):
+    40:       <%= f.password_field :password_confirmation, class: 'form-control' %>
+    41: 
+    42:       <%= f.submit "Add Employee", class: "btn btn-primary" %>
+    43:       <br><br><%= link_to "Cancel", admin_employee_url, class: "btn btn-lg btn-primary" %>
+    44:     <% end %>
+    45:   </div>
+    46: </div>
+  
+app/views/admin/addemployee.html.erb:43:in `block in _app_views_admin_addemployee_html_erb___872020893371500528_70350227107480'
+app/views/admin/addemployee.html.erb:6:in `_app_views_admin_addemployee_html_erb___872020893371500528_70350227107480'
+Started GET "/adminemployee" for 127.0.0.1 at 2018-01-05 13:59:31 +0530
+Processing by AdminController#index as HTML
+  Rendering admin/index.html.erb within layouts/application
+  [1m[36mEmployee Load (1.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (1.6ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  Rendered admin/index.html.erb within layouts/application (16.4ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 86ms (Views: 78.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/adminemployee" for 127.0.0.1 at 2018-01-05 14:00:01 +0530
+Processing by AdminController#index as HTML
+  Rendering admin/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.9ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  Rendered admin/index.html.erb within layouts/application (15.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 129ms (Views: 125.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/addemployee" for 127.0.0.1 at 2018-01-05 14:00:03 +0530
+Processing by AdminController#addemployee as HTML
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/addemployee.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.1ms)
+  Rendered admin/addemployee.html.erb within layouts/application (15.0ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 96ms (Views: 92.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/adminedit?id=2" for 127.0.0.1 at 2018-01-05 14:00:07 +0530
+Processing by AdminController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering admin/edit.html.erb within layouts/application
+  Rendered admin/edit.html.erb within layouts/application (370.4ms)
+Completed 500 Internal Server Error in 380ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `admin_employee_url' for #<#<Class:0x007ff761974fb8>:0x007ff7743bbcf8>
+Did you mean?  adminemployee_url
+               adminemployee_path
+               addemployee_url
+               edit_employee_url):
+    30:         <%= f.check_box :active, id: 'active' %><br/>  
+    31: 
+    32:       <%= f.submit "Update", class: "btn btn-primary" %>
+    33:       <br><br><%= link_to "Cancel", admin_employee_url, class: "btn btn-lg btn-primary" %>
+    34:     <% end %>  
+    35:   </div>
+    36: </div>
+  
+app/views/admin/edit.html.erb:33:in `block in _app_views_admin_edit_html_erb___3397445256868695616_70350391862760'
+app/views/admin/edit.html.erb:6:in `_app_views_admin_edit_html_erb___3397445256868695616_70350391862760'
+Started GET "/adminedit?id=2" for 127.0.0.1 at 2018-01-05 14:00:11 +0530
+Processing by AdminController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering admin/edit.html.erb within layouts/application
+  Rendered admin/edit.html.erb within layouts/application (381.3ms)
+Completed 500 Internal Server Error in 390ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `admin_employee_url' for #<#<Class:0x007ff761974fb8>:0x007ff7746ff7c0>
+Did you mean?  adminemployee_url
+               adminemployee_path
+               addemployee_url
+               edit_employee_url):
+    30:         <%= f.check_box :active, id: 'active' %><br/>  
+    31: 
+    32:       <%= f.submit "Update", class: "btn btn-primary" %>
+    33:       <br><br><%= link_to "Cancel", admin_employee_url, class: "btn btn-lg btn-primary" %>
+    34:     <% end %>  
+    35:   </div>
+    36: </div>
+  
+app/views/admin/edit.html.erb:33:in `block in _app_views_admin_edit_html_erb___3397445256868695616_70350394122680'
+app/views/admin/edit.html.erb:6:in `_app_views_admin_edit_html_erb___3397445256868695616_70350394122680'
+Started GET "/adminemployee" for 127.0.0.1 at 2018-01-05 14:00:13 +0530
+Processing by AdminController#index as HTML
+  Rendering admin/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  Rendered admin/index.html.erb within layouts/application (10.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+Completed 200 OK in 85ms (Views: 81.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/adminemployee" for 127.0.0.1 at 2018-01-05 14:01:16 +0530
+Processing by AdminController#index as HTML
+  Rendering admin/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  Rendered admin/index.html.erb within layouts/application (15.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 88ms (Views: 83.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/adminedit?id=2" for 127.0.0.1 at 2018-01-05 14:01:19 +0530
+Processing by AdminController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering admin/edit.html.erb within layouts/application
+  Rendered admin/edit.html.erb within layouts/application (12.9ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 124ms (Views: 118.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/adminhome" for 127.0.0.1 at 2018-01-05 14:01:21 +0530
+Processing by AdminController#home as HTML
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/home.html.erb within layouts/application
+  Rendered admin/home.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 76ms (Views: 72.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/adminemployee" for 127.0.0.1 at 2018-01-05 14:01:23 +0530
+Processing by AdminController#index as HTML
+  Rendering admin/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  Rendered admin/index.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 97ms (Views: 94.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/adminedit?id=2" for 127.0.0.1 at 2018-01-05 14:01:51 +0530
+Processing by AdminController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering admin/edit.html.erb within layouts/application
+  Rendered admin/edit.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 88ms (Views: 84.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/adminemployee" for 127.0.0.1 at 2018-01-05 14:01:53 +0530
+Processing by AdminController#index as HTML
+  Rendering admin/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (1.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  Rendered admin/index.html.erb within layouts/application (11.7ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 83ms (Views: 79.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/addemployee" for 127.0.0.1 at 2018-01-05 14:02:01 +0530
+Processing by AdminController#addemployee as HTML
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/addemployee.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.2ms)
+  Rendered admin/addemployee.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 73ms (Views: 69.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/addemployee" for 127.0.0.1 at 2018-01-05 14:02:40 +0530
+Processing by AdminController#addemployee as HTML
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/addemployee.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.9ms)
+  Rendered admin/addemployee.html.erb within layouts/application (18.0ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+Completed 200 OK in 118ms (Views: 113.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/adminemployee" for 127.0.0.1 at 2018-01-05 14:02:43 +0530
+Processing by AdminController#index as HTML
+  Rendering admin/index.html.erb within layouts/application
+  [1m[36mEmployee Load (4.6ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  Rendered admin/index.html.erb within layouts/application (17.7ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 121ms (Views: 113.1ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/adminemployee" for 127.0.0.1 at 2018-01-05 14:03:54 +0530
+Processing by AdminController#index as HTML
+  Rendering admin/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  Rendered admin/index.html.erb within layouts/application (13.3ms)
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "  left": expected ";", was ": 50%;"):
+    2: <html>
+    3:   <head>
+    4:     <%= csrf_meta_tags %>
+    5:     <%= stylesheet_link_tag    'application', media: 'all',
+    6:                                               'data-turbolinks-track': 'reload' %>
+    7:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    8:     <%= render 'layouts/shim' %>
+  
+app/assets/stylesheets/custom.scss:214
+app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___2317380019607177502_70350394715200'
+Started GET "/addemployee" for 127.0.0.1 at 2018-01-05 14:03:57 +0530
+Processing by AdminController#addemployee as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/addemployee.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  Rendered admin/addemployee.html.erb within layouts/application (10.6ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "  left": expected ";", was ": 50%;"):
+    2: <html>
+    3:   <head>
+    4:     <%= csrf_meta_tags %>
+    5:     <%= stylesheet_link_tag    'application', media: 'all',
+    6:                                               'data-turbolinks-track': 'reload' %>
+    7:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    8:     <%= render 'layouts/shim' %>
+  
+app/assets/stylesheets/custom.scss:214
+app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___2317380019607177502_70350231697800'
+Started GET "/adminemployee" for 127.0.0.1 at 2018-01-05 14:04:54 +0530
+Processing by AdminController#index as HTML
+  Rendering admin/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  Rendered admin/index.html.erb within layouts/application (12.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 1948ms (Views: 1944.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/addemployee" for 127.0.0.1 at 2018-01-05 14:04:56 +0530
+Processing by AdminController#addemployee as HTML
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/addemployee.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  Rendered admin/addemployee.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 79ms (Views: 76.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/adminemployee" for 127.0.0.1 at 2018-01-05 14:05:00 +0530
+Processing by AdminController#index as HTML
+  Rendering admin/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  Rendered admin/index.html.erb within layouts/application (18.8ms)
+  Rendered layouts/_shim.html.erb (1.1ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 97ms (Views: 93.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/adminedit?id=3" for 127.0.0.1 at 2018-01-05 14:05:03 +0530
+Processing by AdminController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering admin/edit.html.erb within layouts/application
+  Rendered admin/edit.html.erb within layouts/application (13.1ms)
+  Rendered layouts/_shim.html.erb (1.8ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+Completed 200 OK in 98ms (Views: 93.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/adminemployee" for 127.0.0.1 at 2018-01-05 14:05:05 +0530
+Processing by AdminController#index as HTML
+  Rendering admin/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  Rendered admin/index.html.erb within layouts/application (9.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 113ms (Views: 111.1ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/adminlogout" for 127.0.0.1 at 2018-01-05 14:06:07 +0530
+Processing by AdminsessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"EHeYW6uylQneaYdMQnXzBqtEHvvO50GNzLm67wvCsYSqCSmgAq2YfzpjeT3QHwFnSHMomwg/rch6z8I9MHmyXQ=="}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/adminlogin
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/adminlogin" for 127.0.0.1 at 2018-01-05 14:06:07 +0530
+Processing by AdminsessionController#new as HTML
+  Rendering adminsession/new.html.erb within layouts/application
+  Rendered adminsession/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 76ms (Views: 75.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-01-05 14:06:12 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 81ms (Views: 79.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-01-05 14:06:16 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"glDIvBmdl+5TXFCJ1phNTWZT0XnXNDEe4eThuPTf6Bc4LnlHsIKamLdWrvhE8r8shWTnGRHs3VtXkplqz2Trzg==", "session"=>{"email"=>"pooja92@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "pooja92@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/home
+Completed 302 Found in 106ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-05 14:06:16 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 91ms (Views: 86.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/employees/3/edit" for 127.0.0.1 at 2018-01-05 14:06:18 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (401.8ms)
+Completed 500 Internal Server Error in 419ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `employeehome_path' for #<#<Class:0x007ff760fb8948>:0x007ff761976480>
+Did you mean?  employee_path
+               employees_path):
+    30:       <%= f.file_field :image,class: 'form-control' %>
+    31: 
+    32:       <%= f.submit "Update", class: "btn btn-primary" %>
+    33:       <br><br><%= link_to "Cancel", employeehome_path, class: "btn btn-lg btn-primary can" %>
+    34:     <% end %>
+    35:   </div>
+    36: </div>
+  
+app/views/employees/edit.html.erb:33:in `block in _app_views_employees_edit_html_erb__1339487480938150328_70350235483280'
+app/views/employees/edit.html.erb:6:in `_app_views_employees_edit_html_erb__1339487480938150328_70350235483280'
+Started GET "/employees/3/edit" for 127.0.0.1 at 2018-01-05 14:07:44 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (332.7ms)
+Completed 500 Internal Server Error in 341ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `employeehome_path' for #<#<Class:0x007ff760fb8948>:0x007ff760dd2ea8>
+Did you mean?  employee_path
+               employees_path):
+    30:       <%= f.file_field :image,class: 'form-control' %>
+    31: 
+    32:       <%= f.submit "Update", class: "btn btn-primary" %>
+    33:       <!-- <br><br><%= link_to "Cancel", employeehome_path, class: "btn btn-lg btn-primary can" %> -->
+    34:     <% end %>
+    35:   </div>
+    36: </div>
+  
+app/views/employees/edit.html.erb:33:in `block in _app_views_employees_edit_html_erb__1339487480938150328_70350229380200'
+app/views/employees/edit.html.erb:6:in `_app_views_employees_edit_html_erb__1339487480938150328_70350229380200'
+Started GET "/employees/3/edit" for 127.0.0.1 at 2018-01-05 14:07:48 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (326.7ms)
+Completed 500 Internal Server Error in 334ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `employeehome_path' for #<#<Class:0x007ff760fb8948>:0x007ff760d5b8f8>
+Did you mean?  employee_path
+               employees_path):
+    30:       <%= f.file_field :image,class: 'form-control' %>
+    31: 
+    32:       <%= f.submit "Update", class: "btn btn-primary" %>
+    33:       <!-- <br><br><%= link_to "Cancel", employeehome_path, class: "btn btn-lg btn-primary can" %> -->
+    34:     <% end %>
+    35:   </div>
+    36: </div>
+  
+app/views/employees/edit.html.erb:33:in `block in _app_views_employees_edit_html_erb__1339487480938150328_70350229160360'
+app/views/employees/edit.html.erb:6:in `_app_views_employees_edit_html_erb__1339487480938150328_70350229160360'
+Started GET "/employees/3/edit" for 127.0.0.1 at 2018-01-05 14:08:07 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+Completed 200 OK in 72ms (Views: 68.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-05 14:08:10 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 72ms (Views: 68.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/employees/3/edit" for 127.0.0.1 at 2018-01-05 14:09:14 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (9.9ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 107ms (Views: 103.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/showemployee" for 127.0.0.1 at 2018-01-05 14:09:17 +0530
+Processing by AdminController#show as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 5ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Employee with 'id'=):
+  
+app/controllers/admin_controller.rb:21:in `show'
+Started GET "/showemployee" for 127.0.0.1 at 2018-01-05 14:09:46 +0530
+Processing by AdminController#show as HTML
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Employee with 'id'=):
+  
+app/controllers/admin_controller.rb:21:in `show'
+Started GET "/employees/3/edit" for 127.0.0.1 at 2018-01-05 14:09:47 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 75ms (Views: 71.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/showemployee" for 127.0.0.1 at 2018-01-05 14:09:49 +0530
+Processing by AdminController#show as HTML
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 8ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Employee with 'id'=):
+  
+app/controllers/admin_controller.rb:21:in `show'
+Started GET "/employees/3/edit" for 127.0.0.1 at 2018-01-05 14:09:59 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 70ms (Views: 63.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-05 14:10:02 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 66ms (Views: 62.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/employees/3/edit" for 127.0.0.1 at 2018-01-05 14:10:05 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+Completed 200 OK in 93ms (Views: 88.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-05 14:10:06 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 71ms (Views: 67.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-05 14:10:18 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 82ms (Views: 79.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/employees/3/edit" for 127.0.0.1 at 2018-01-05 14:10:19 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 100ms (Views: 93.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-05 14:10:20 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 90ms (Views: 86.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-05 14:10:33 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 86ms (Views: 82.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/employees/3/edit" for 127.0.0.1 at 2018-01-05 14:10:35 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (49.0ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 131ms (Views: 127.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-05 14:10:37 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 94ms (Views: 90.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-05 14:12:02 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    4: <% if logged_in? %>
+    5: 
+    6: <div class="container det">
+    7: <%= gravatar_for @employee %>
+    8: <h1 class = "text-center"><%= @employee.name %> </h1>
+    9: <div class = "empgrid">
+   10: <div><h4 class = "text-right">Employee ID</h4></div>
+  
+app/helpers/employees_helper.rb:3:in `gravatar_for'
+app/views/employees/home.html.erb:7:in `_app_views_employees_home_html_erb__698763047793022532_70350231660360'
+Started GET "/home" for 127.0.0.1 at 2018-01-05 14:12:18 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    4: <% if logged_in? %>
+    5: 
+    6: <div class="container det">
+    7: <h1 class = "text-center"><%= @employee.name %> </h1>
+    8: <div class = "empgrid">
+    9: <div><h4 class = "text-right">Employee ID</h4></div>
+   10: <div><h4 class = "text-left">RP<%= @employee.id %></h4></div>
+  
+app/views/employees/home.html.erb:7:in `_app_views_employees_home_html_erb__698763047793022532_70350225773220'
+Started GET "/home" for 127.0.0.1 at 2018-01-05 14:13:29 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (1.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+     5: 
+     6: 
+     7: <div><h4 class = "text-right">Employee ID</h4></div>
+     8: <div><h4 class = "text-left">RP<%= @employee.id %></h4></div>
+     9: <div><h4 class = "text-right">Email</h4></div>
+    10: <div><h4 class = "text-left"><%= @employee.email %></h4></div>
+    11: <div><h4 class = "text-right">Designation</h4></div>
+  
+app/views/employees/home.html.erb:8:in `_app_views_employees_home_html_erb__698763047793022532_70350418241860'
+Started GET "/home" for 127.0.0.1 at 2018-01-05 14:13:45 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 70ms (Views: 67.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-05 14:13:48 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 64ms (Views: 60.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/employees/3/edit" for 127.0.0.1 at 2018-01-05 14:13:49 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 72ms (Views: 68.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-05 14:13:50 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 74ms (Views: 69.9ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2018-01-05 15:01:55 +0530
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HmUBtrw+5ljYl9cVIhqOqeq82JxrbVfhnprlWePyMzGkG7BNFSHrLjydKWSwcHzICYvu/K21u6Qo7J2L2Ekw6A=="}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 34ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-01-05 15:01:55 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 69ms (Views: 67.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/adminlogin" for 127.0.0.1 at 2018-01-05 15:02:03 +0530
+Processing by AdminsessionController#new as HTML
+  Rendering adminsession/new.html.erb within layouts/application
+  Rendered adminsession/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 65ms (Views: 63.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/adminlogin" for 127.0.0.1 at 2018-01-05 15:02:08 +0530
+Processing by AdminsessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jfh+9BkYpDIkRQhRHmvaQDEarHH2csKr5vuF0mqM92ufhs8PsAepRMBP9iCMASgh0i2aETCqLu5Qjf0AUTf0sg==", "session"=>{"email"=>"lvaguez@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "lvaguez@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/adminhome
+Completed 302 Found in 105ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/adminhome" for 127.0.0.1 at 2018-01-05 15:02:08 +0530
+Processing by AdminController#home as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/home.html.erb within layouts/application
+  Rendered admin/home.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 78ms (Views: 72.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/adminemployee" for 127.0.0.1 at 2018-01-05 15:02:10 +0530
+Processing by AdminController#index as HTML
+  Rendering admin/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  Rendered admin/index.html.erb within layouts/application (13.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (2.8ms)
+Completed 200 OK in 86ms (Views: 82.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/addemployee" for 127.0.0.1 at 2018-01-05 15:02:11 +0530
+Processing by AdminController#addemployee as HTML
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/addemployee.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  Rendered admin/addemployee.html.erb within layouts/application (10.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 82ms (Views: 78.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/addemployee" for 127.0.0.1 at 2018-01-05 15:04:03 +0530
+Processing by AdminController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sLGHtSSh+eNyEKuuFyWK15YsPTIr7yBzFVgsw2dFN1DiqjA6RqYrTWKN/6XUvED7jwEvOhdJ5aO4KFEqLqFXIg==", "employee"=>{"name"=>"Lekshmi", "designation"=>"Back End", "email"=>"klekshmisuresh@gmail.com", "phone"=>"8080000888", "gender"=>"2", "dateofjoin"=>"2017-01-03", "address"=>"Lekshmi, kk lane, dksd, vennala", "active"=>"1", "username"=>"klekshmisuresh@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Add Employee"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE LOWER("employees"."email") = LOWER(?) LIMIT ?[0m  [["email", "klekshmisuresh@gmail.com"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."phone" = ? LIMIT ?[0m  [["phone", "8080000888"], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "email", "created_at", "updated_at", "password_digest", "designation", "dateofjoin", "gender", "address", "phone", "active", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lekshmi"], ["email", "klekshmisuresh@gmail.com"], ["created_at", "2018-01-05 09:34:03.216008"], ["updated_at", "2018-01-05 09:34:03.216008"], ["password_digest", "$2a$10$/GFm/7TSkdHackYmr24w2uNb3ziASXr2YbAL.NG8HP40iUsh.MEQW"], ["designation", "Back End"], ["dateofjoin", "2017-01-03"], ["gender", "2"], ["address", "Lekshmi, kk lane, dksd, vennala"], ["phone", "8080000888"], ["active", "t"], ["username", "klekshmisuresh@gmail.com"]]
+  [1m[35m (107.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/adminemployee
+Completed 302 Found in 222ms (ActiveRecord: 109.4ms)
+
+
+Started GET "/adminemployee" for 127.0.0.1 at 2018-01-05 15:04:03 +0530
+Processing by AdminController#index as HTML
+  Rendering admin/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  Rendered admin/index.html.erb within layouts/application (8.5ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 72ms (Views: 68.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/adminemployee?page=2" for 127.0.0.1 at 2018-01-05 15:04:08 +0530
+Processing by AdminController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering admin/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  Rendered admin/index.html.erb within layouts/application (11.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 98ms (Views: 94.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/adminemployee?page=1" for 127.0.0.1 at 2018-01-05 15:04:10 +0530
+Processing by AdminController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering admin/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  Rendered admin/index.html.erb within layouts/application (11.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 79ms (Views: 74.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/adminemployee?page=2" for 127.0.0.1 at 2018-01-05 15:04:11 +0530
+Processing by AdminController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering admin/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  Rendered admin/index.html.erb within layouts/application (13.8ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 80ms (Views: 76.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/adminemployee?page=1" for 127.0.0.1 at 2018-01-05 15:04:12 +0530
+Processing by AdminController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering admin/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  Rendered admin/index.html.erb within layouts/application (10.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 76ms (Views: 73.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/addemployee" for 127.0.0.1 at 2018-01-05 15:04:16 +0530
+Processing by AdminController#addemployee as HTML
+  [1m[36mEmployee Load (1.7ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/addemployee.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.9ms)
+  Rendered admin/addemployee.html.erb within layouts/application (16.0ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 121ms (Views: 114.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/adminemployee" for 127.0.0.1 at 2018-01-05 15:04:17 +0530
+Processing by AdminController#index as HTML
+  Rendering admin/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  Rendered admin/index.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+Completed 200 OK in 92ms (Views: 88.7ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/adminlogout" for 127.0.0.1 at 2018-01-05 15:04:18 +0530
+Processing by AdminsessionController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aF9FkHhYZEDlJZeTtLUSk18idWlTNUG5QHQHvnfx/GrSIfRr0UdpNgEvaeIm3+DyvBVDCZXtrfz2An9sTEr/sw=="}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/adminlogin
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/adminlogin" for 127.0.0.1 at 2018-01-05 15:04:18 +0530
+Processing by AdminsessionController#new as HTML
+  Rendering adminsession/new.html.erb within layouts/application
+  Rendered adminsession/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 66ms (Views: 63.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/adminlogin" for 127.0.0.1 at 2018-01-05 15:04:24 +0530
+Processing by AdminsessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hsIde8wUiYvwPCdks1NxhR5y5jH0JoPPY+meV/f5+dc8vKyAZQuE/RQ22RUhOYPk/UXQUTL+b4rVn+aFzEL6Dg==", "session"=>{"email"=>"klekshmisuresh@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "klekshmisuresh@gmail.com"], ["LIMIT", 1]]
+  Rendering adminsession/new.html.erb within layouts/application
+  Rendered adminsession/new.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 155ms (Views: 53.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/adminlogin" for 127.0.0.1 at 2018-01-05 15:04:27 +0530
+Processing by AdminsessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p/TLa1cKthDTxpozm54X4dlnvrlktqv2uU9QfaXXFE4dinqQ/hW7ZjfMZEIJ9OWAOlCI2aJuR7MPOSivnmwXlw==", "session"=>{"email"=>"klekshmisuresh@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "klekshmisuresh@gmail.com"], ["LIMIT", 1]]
+  Rendering adminsession/new.html.erb within layouts/application
+  Rendered adminsession/new.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 164ms (Views: 59.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/adminlogin" for 127.0.0.1 at 2018-01-05 15:04:36 +0530
+Processing by AdminsessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n+WV/tv2QAyT4rKpelVjEC/McH6yuIBRRQEf5X8iAeAlmyQFculNenfoTNjoP5FxzPtGHnRgbBTzd2c3RJkCOQ==", "session"=>{"email"=>"klekshmisuresh@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "klekshmisuresh@gmail.com"], ["LIMIT", 1]]
+  Rendering adminsession/new.html.erb within layouts/application
+  Rendered adminsession/new.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 168ms (Views: 64.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/adminlogin" for 127.0.0.1 at 2018-01-05 15:04:44 +0530
+Processing by AdminsessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HbUbcDUNsM5pRTaO/BkwTWL1O8HVsfP022NllXk8JKeny6qLnBK9uI1PyP9uc8IsgcINoRNpH7FtFR1HQocnfg==", "session"=>{"email"=>"klekshmisuresh@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "klekshmisuresh@gmail.com"], ["LIMIT", 1]]
+  Rendering adminsession/new.html.erb within layouts/application
+  Rendered adminsession/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 178ms (Views: 75.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-01-05 15:04:53 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 61ms (Views: 59.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-01-05 15:04:56 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gCnItKJRWwzJeQ/xg6GQSuCaS4zNUf91DHYTL/v09+46V3lPC05Wei1z8YARy2IrA6197AuJEzC6AGv9wE/0Nw==", "session"=>{"email"=>"klekshmisuresh@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "klekshmisuresh@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/home
+Completed 302 Found in 103ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-05 15:04:56 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+Completed 200 OK in 67ms (Views: 64.0ms | ActiveRecord: 0.4ms)
+
+

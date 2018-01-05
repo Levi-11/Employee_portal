@@ -30,7 +30,6 @@ class AdminController < ApplicationController
     @employee = Employee.new(employee_signup_params)
     if @employee.save
       # Handle a successful save.
-      log_in @employee
       flash[:success] = "New employee is added!"
       redirect_to adminemployee_path
     else
