@@ -34,7 +34,7 @@ class AdminController < ApplicationController
       flash[:success] = "New employee is added!"
       redirect_to adminemployee_path
     else
-      redirect_to addemployee_path
+      render 'addemployee'
     end
   end
 
