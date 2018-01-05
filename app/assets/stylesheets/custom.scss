@@ -1,5 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+// @import "font-awesome-sprockets";
+// @import "font-awesome";
+
 
 /* mixins, variables, etc. */
 
@@ -196,4 +200,11 @@ input {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+.faw{
+  color: black;
+  position: absolute;
+  font-size: 5rem;
+  left: 50%;
+  transform: translate(-50%,0); 
 }
