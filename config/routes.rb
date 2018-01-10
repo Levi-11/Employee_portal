@@ -32,6 +32,10 @@ Rails.application.routes.draw do
 
   delete '/logout',  to: 'sessions#destroy'
 
+  get 'auth/facebook', as: "auth_provider"
+  get 'auth/facebook/callback', to: 'employees#login'
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'sessions#new'  
   resources :employees 

@@ -6502,3 +6502,2162 @@ Processing by EmployeesController#home as HTML
 Completed 200 OK in 1760ms (Views: 1757.5ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-01-08 14:20:13 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (154.1ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (7.4ms)
+Completed 200 OK in 2087ms (Views: 2062.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/adminlogin" for 127.0.0.1 at 2018-01-08 14:20:39 +0530
+Processing by AdminsessionController#new as HTML
+  Rendering adminsession/new.html.erb within layouts/application
+  Rendered adminsession/new.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 72ms (Views: 54.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/adminlogin" for 127.0.0.1 at 2018-01-08 14:20:48 +0530
+Processing by AdminsessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zFR+Itk1251ONLVLtFA7rb2PfRFQ0NCWJYjVmZJakZO/HcZJBMLaTxVvF1jsXqjuX82gua50Ym6bkCvCy/QyYg==", "session"=>{"email"=>"levaguez@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "levaguez@gmail.com"], ["LIMIT", 1]]
+  Rendering adminsession/new.html.erb within layouts/application
+  Rendered adminsession/new.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (2.5ms)
+Completed 200 OK in 339ms (Views: 69.7ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/adminlogin" for 127.0.0.1 at 2018-01-08 14:21:01 +0530
+Processing by AdminsessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZwtqX7V1jCIyBh+ahpBuStbpYPYU29VxNiNlcXUMiHUUQtI0aIKN8GldvYnenv0JNKu9Xup/Z4mIO5sqLKIrhA==", "session"=>{"email"=>"lvaguez@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "lvaguez@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/adminhome
+Completed 302 Found in 104ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/adminhome" for 127.0.0.1 at 2018-01-08 14:21:02 +0530
+Processing by AdminController#home as HTML
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/home.html.erb within layouts/application
+  Rendered admin/home.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 91ms (Views: 84.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/adminemployee" for 127.0.0.1 at 2018-01-08 14:21:04 +0530
+Processing by AdminController#index as HTML
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  Rendered admin/index.html.erb within layouts/application (13.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 203ms (Views: 77.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/addemployee" for 127.0.0.1 at 2018-01-08 14:21:08 +0530
+Processing by AdminController#addemployee as HTML
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin/addemployee.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.0ms)
+  Rendered admin/addemployee.html.erb within layouts/application (39.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 110ms (Views: 99.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/addemployee" for 127.0.0.1 at 2018-01-08 14:21:16 +0530
+Processing by AdminController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"83X+4lmAZbroWnWDCb0L2JSMsGR0WZGwkOf5d9xeCrCfxdqDa6vwGlrjvTnxTk/R8umzRzUHuk5yKqepW7lMTg==", "employee"=>{"name"=>"", "designation"=>"", "email"=>"", "phone"=>"", "gender"=>"Male", "dateofjoin"=>"", "address"=>"", "active"=>"0", "username"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Add Employee"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE LOWER("employees"."email") = LOWER(?) LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."phone" = ? LIMIT ?[0m  [["phone", ""], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering admin/addemployee.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.5ms)
+  Rendered admin/addemployee.html.erb within layouts/application (19.7ms)
+  Rendered layouts/_shim.html.erb (0.9ms)
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.9ms)
+Completed 200 OK in 124ms (Views: 97.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-09 11:22:38 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (164.2ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (8.1ms)
+Completed 200 OK in 2850ms (Views: 2827.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-09 17:53:13 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (24.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (7.6ms)
+Completed 200 OK in 362ms (Views: 350.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/adminlogin" for 127.0.0.1 at 2018-01-09 17:53:58 +0530
+Processing by AdminsessionController#new as HTML
+  Rendering adminsession/new.html.erb within layouts/application
+  Rendered adminsession/new.html.erb within layouts/application (52.2ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    22: 	
+    23: 
+    24: <%= link_to "Facebook Login", '/auth/facebook' %>
+    25: <%= image_tag @user['picture']['data']['url'].to_s %>
+    26: <%= @user['name'] %>
+    27: 
+    28:       
+  
+app/views/adminsession/new.html.erb:25:in `_app_views_adminsession_new_html_erb___2477079009438168637_69963205801800'
+Started GET "/" for 127.0.0.1 at 2018-01-09 17:54:15 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 69ms (Views: 66.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/adminlogin" for 127.0.0.1 at 2018-01-09 17:54:19 +0530
+Processing by AdminsessionController#new as HTML
+  Rendering adminsession/new.html.erb within layouts/application
+  Rendered adminsession/new.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 66ms (Views: 64.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-09 17:54:22 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-09 17:54:22 +0530
+Started GET "/auth/facebook/callback?error_code=1349048&error_message=Can%27t+load+URL%3A+The+domain+of+this+URL+isn%27t+included+in+the+app%27s+domains.+To+be+able+to+load+this+URL%2C+add+all+domains+and+sub-domains+of+your+app+to+the+App+Domains+field+in+your+app+settings.&state=5cf8b8dfefae01062380b4c0c75c3b278aaf79df1367f7a9" for 127.0.0.1 at 2018-01-09 17:54:29 +0530
+  
+OmniAuth::Strategies::Facebook::NoAuthorizationCodeError (must pass either a `code` (via URL or by an `fbsr_XXX` signed request cookie)):
+  
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:147:in `with_authorization_code!'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-01-09 17:58:44 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 66ms (Views: 64.3ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-09 17:59:02 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-09 17:59:02 +0530
+Started GET "/auth/facebook/callback?error_code=1349048&error_message=Can%27t+load+URL%3A+The+domain+of+this+URL+isn%27t+included+in+the+app%27s+domains.+To+be+able+to+load+this+URL%2C+add+all+domains+and+sub-domains+of+your+app+to+the+App+Domains+field+in+your+app+settings.&state=3c2bd3a3bf7b28311ae4d97988a73ba1781b60a63269fab0" for 127.0.0.1 at 2018-01-09 17:59:07 +0530
+  
+OmniAuth::Strategies::Facebook::NoAuthorizationCodeError (must pass either a `code` (via URL or by an `fbsr_XXX` signed request cookie)):
+  
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:147:in `with_authorization_code!'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-01-09 18:00:04 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_shim.html.erb (0.8ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 99ms (Views: 96.9ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-09 18:00:16 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-09 18:00:16 +0530
+Started GET "/auth/facebook/callback?error_code=1349048&error_message=Can%27t+load+URL%3A+The+domain+of+this+URL+isn%27t+included+in+the+app%27s+domains.+To+be+able+to+load+this+URL%2C+add+all+domains+and+sub-domains+of+your+app+to+the+App+Domains+field+in+your+app+settings.&state=4c2c2bfb777f6261ef1fc11a38b2134a86bed55115280fdb" for 127.0.0.1 at 2018-01-09 18:00:22 +0530
+  
+OmniAuth::Strategies::Facebook::NoAuthorizationCodeError (must pass either a `code` (via URL or by an `fbsr_XXX` signed request cookie)):
+  
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:147:in `with_authorization_code!'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-09 18:01:53 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-09 18:01:54 +0530
+Started GET "/auth/facebook/callback?error_code=1349048&error_message=Can%27t+load+URL%3A+The+domain+of+this+URL+isn%27t+included+in+the+app%27s+domains.+To+be+able+to+load+this+URL%2C+add+all+domains+and+sub-domains+of+your+app+to+the+App+Domains+field+in+your+app+settings.&state=16a9413afa87ef78373b0807db854e4c81c87df41447e630" for 127.0.0.1 at 2018-01-09 18:02:10 +0530
+  
+OmniAuth::Strategies::Facebook::NoAuthorizationCodeError (must pass either a `code` (via URL or by an `fbsr_XXX` signed request cookie)):
+  
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:147:in `with_authorization_code!'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-01-09 18:02:35 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_shim.html.erb (1.4ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 122ms (Views: 119.7ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-09 18:02:37 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-09 18:02:38 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-09 18:02:38 +0530
+Started GET "/auth/facebook/callback?error_code=1349048&error_message=Can%27t+load+URL%3A+The+domain+of+this+URL+isn%27t+included+in+the+app%27s+domains.+To+be+able+to+load+this+URL%2C+add+all+domains+and+sub-domains+of+your+app+to+the+App+Domains+field+in+your+app+settings.&state=8aed06917c8508ae230626450fde75ea06072b51937ce57d" for 127.0.0.1 at 2018-01-09 18:02:41 +0530
+  
+OmniAuth::Strategies::Facebook::NoAuthorizationCodeError (must pass either a `code` (via URL or by an `fbsr_XXX` signed request cookie)):
+  
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:147:in `with_authorization_code!'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/adminlogin" for 127.0.0.1 at 2018-01-10 10:36:43 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminsessionController#new as HTML
+  Rendering adminsession/new.html.erb within layouts/application
+  Rendered adminsession/new.html.erb within layouts/application (153.2ms)
+  Rendered layouts/_shim.html.erb (0.8ms)
+  Rendered layouts/_header.html.erb (13.4ms)
+Completed 200 OK in 2200ms (Views: 2170.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-10 10:36:57 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (25.3ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 92ms (Views: 85.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 10:37:00 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 10:37:01 +0530
+Started GET "/auth/facebook/callback?error_code=1349048&error_message=Can%27t+load+URL%3A+The+domain+of+this+URL+isn%27t+included+in+the+app%27s+domains.+To+be+able+to+load+this+URL%2C+add+all+domains+and+sub-domains+of+your+app+to+the+App+Domains+field+in+your+app+settings.&state=247f2681c59de657d0fb54903f6985a4cea6000e6f96fd69" for 127.0.0.1 at 2018-01-10 10:37:08 +0530
+  
+OmniAuth::Strategies::Facebook::NoAuthorizationCodeError (must pass either a `code` (via URL or by an `fbsr_XXX` signed request cookie)):
+  
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:147:in `with_authorization_code!'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-01-10 10:39:54 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 72ms (Views: 69.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 10:39:56 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 10:39:56 +0530
+Started GET "/auth/facebook/callback?error_code=1349048&error_message=Can%27t+load+URL%3A+The+domain+of+this+URL+isn%27t+included+in+the+app%27s+domains.+To+be+able+to+load+this+URL%2C+add+all+domains+and+sub-domains+of+your+app+to+the+App+Domains+field+in+your+app+settings.&state=b3b7a9e4c8f8615e3b2913b5e9eb3731208da35a512e461d" for 127.0.0.1 at 2018-01-10 10:40:05 +0530
+  
+OmniAuth::Strategies::Facebook::NoAuthorizationCodeError (must pass either a `code` (via URL or by an `fbsr_XXX` signed request cookie)):
+  
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:147:in `with_authorization_code!'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-01-10 10:42:46 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_shim.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 75ms (Views: 72.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 10:42:48 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 10:42:48 +0530
+Started GET "/auth/facebook/callback?error_code=1349048&error_message=Can%27t+load+URL%3A+The+domain+of+this+URL+isn%27t+included+in+the+app%27s+domains.+To+be+able+to+load+this+URL%2C+add+all+domains+and+sub-domains+of+your+app+to+the+App+Domains+field+in+your+app+settings.&state=73582337c9ccd1218020b017429cfac98eefc0c78495d799" for 127.0.0.1 at 2018-01-10 10:42:52 +0530
+  
+OmniAuth::Strategies::Facebook::NoAuthorizationCodeError (must pass either a `code` (via URL or by an `fbsr_XXX` signed request cookie)):
+  
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:147:in `with_authorization_code!'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-01-10 10:43:01 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_shim.html.erb (0.8ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+Completed 200 OK in 113ms (Views: 111.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 10:43:03 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 10:43:03 +0530
+Started GET "/auth/facebook/callback?error_code=1349168&error_message=URL+blocked%3A+This+redirect+failed+because+the+redirect+URI+is+not+white-listed+in+the+app%27s+client+OAuth+settings.+Make+sure+that+the+client+and+web+OAuth+logins+are+on+and+add+all+your+app+domains+as+valid+OAuth+redirect+URIs.&state=82426ca95d931a860c3a2d05d828b6ca55ea8436d978cbb9" for 127.0.0.1 at 2018-01-10 10:43:19 +0530
+  
+OmniAuth::Strategies::Facebook::NoAuthorizationCodeError (must pass either a `code` (via URL or by an `fbsr_XXX` signed request cookie)):
+  
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:147:in `with_authorization_code!'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-01-10 10:45:26 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 70ms (Views: 68.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 10:45:29 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 10:45:29 +0530
+Started GET "/auth/facebook/callback?error_code=1349168&error_message=URL+blocked%3A+This+redirect+failed+because+the+redirect+URI+is+not+white-listed+in+the+app%27s+client+OAuth+settings.+Make+sure+that+the+client+and+web+OAuth+logins+are+on+and+add+all+your+app+domains+as+valid+OAuth+redirect+URIs.&state=b6b02e26b77bd95db7acf14dcaada50f335b9d0cb3a59240" for 127.0.0.1 at 2018-01-10 10:45:33 +0530
+  
+OmniAuth::Strategies::Facebook::NoAuthorizationCodeError (must pass either a `code` (via URL or by an `fbsr_XXX` signed request cookie)):
+  
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:147:in `with_authorization_code!'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/auth/facebook/callback?error_code=1349168&error_message=URL+blocked%3A+This+redirect+failed+because+the+redirect+URI+is+not+white-listed+in+the+app%27s+client+OAuth+settings.+Make+sure+that+the+client+and+web+OAuth+logins+are+on+and+add+all+your+app+domains+as+valid+OAuth+redirect+URIs.&state=b6b02e26b77bd95db7acf14dcaada50f335b9d0cb3a59240" for 127.0.0.1 at 2018-01-10 10:46:16 +0530
+  
+OmniAuth::Strategies::Facebook::NoAuthorizationCodeError (must pass either a `code` (via URL or by an `fbsr_XXX` signed request cookie)):
+  
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:147:in `with_authorization_code!'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 10:48:07 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 10:48:07 +0530
+Started GET "/" for 127.0.0.1 at 2018-01-10 10:50:35 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 93ms (Views: 91.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 10:50:38 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 10:50:39 +0530
+Started GET "/auth/facebook/callback?code=AQD2yYMcO-XACeGEiVIlORVkGVn2D1ArT0Fqszad1MTvfk1wuOMaM0oPZjRPGdxv3ctfzDp9ZozxRxP-Z-kRYKrsBwDEzrsgIVGsjlnD1RPm0d3p8DfbqtaVrry9FsziIj5g4LLYDJ6-vEkHuFHkEaIcOqI3iIxaTvxeT8CCNhSI9E7v25am_GTaI6Zon-mSPAru42uGyZkNL2RVFWCmuRiaMb6P_WPdMjnero7O8FlYv6EYUDXaJouXZg4Iny2uIN9pbuSswloefrI_MpC4ZlclYrjYRUOFh1Ejkn3O0I3SQuCBTLW23pvcdb1ALgRtMbhFQY9WnZcarnggB-zoM6120D57ra0kwv_AQdnXTOt2tw&state=cad8855b4bca6bd5966ed7b18152ce1bc604538993352934" for 127.0.0.1 at 2018-01-10 10:50:45 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQD2yYMcO-XACeGEiVIlORVkGVn2D1ArT0Fqszad1MTvfk1wuOMaM0oPZjRPGdxv3ctfzDp9ZozxRxP-Z-kRYKrsBwDEzrsgIVGsjlnD1RPm0d3p8DfbqtaVrry9FsziIj5g4LLYDJ6-vEkHuFHkEaIcOqI3iIxaTvxeT8CCNhSI9E7v25am_GTaI6Zon-mSPAru42uGyZkNL2RVFWCmuRiaMb6P_WPdMjnero7O8FlYv6EYUDXaJouXZg4Iny2uIN9pbuSswloefrI_MpC4ZlclYrjYRUOFh1Ejkn3O0I3SQuCBTLW23pvcdb1ALgRtMbhFQY9WnZcarnggB-zoM6120D57ra0kwv_AQdnXTOt2tw", "state"=>"cad8855b4bca6bd5966ed7b18152ce1bc604538993352934"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 613ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    1: <%= image_tag @user['picture']['data']['url'].to_s %>
+    2: <%= @user['name'] %>
+  
+app/views/employees/login.html.erb:1:in `_app_views_employees_login_html_erb___3313436452152382498_70065700882280'
+Started GET "/auth/facebook/callback?code=AQD2yYMcO-XACeGEiVIlORVkGVn2D1ArT0Fqszad1MTvfk1wuOMaM0oPZjRPGdxv3ctfzDp9ZozxRxP-Z-kRYKrsBwDEzrsgIVGsjlnD1RPm0d3p8DfbqtaVrry9FsziIj5g4LLYDJ6-vEkHuFHkEaIcOqI3iIxaTvxeT8CCNhSI9E7v25am_GTaI6Zon-mSPAru42uGyZkNL2RVFWCmuRiaMb6P_WPdMjnero7O8FlYv6EYUDXaJouXZg4Iny2uIN9pbuSswloefrI_MpC4ZlclYrjYRUOFh1Ejkn3O0I3SQuCBTLW23pvcdb1ALgRtMbhFQY9WnZcarnggB-zoM6120D57ra0kwv_AQdnXTOt2tw&state=cad8855b4bca6bd5966ed7b18152ce1bc604538993352934" for 127.0.0.1 at 2018-01-10 10:51:33 +0530
+  
+OAuth2::Error ({"message"=>"This authorization code has been used.", "type"=>"OAuthException", "code"=>100, "fbtrace_id"=>"G823jaqa67j"}: 
+{"error":{"message":"This authorization code has been used.","type":"OAuthException","code":100,"fbtrace_id":"G823jaqa67j"}}):
+  
+oauth2 (1.4.0) lib/oauth2/client.rb:119:in `request'
+oauth2 (1.4.0) lib/oauth2/client.rb:146:in `get_token'
+oauth2 (1.4.0) lib/oauth2/strategy/auth_code.rb:30:in `get_token'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:89:in `build_access_token'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:110:in `build_access_token'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:73:in `callback_phase'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/auth/facebook/callback?code=AQCpTpKg-rCssDkXooLdbSnBqIf03nkEspTgSFM5glUkRMGQGcTfebhB5jgJumYJsyd-K_xCh1uFtt4R4zIBxSjCC-ZIFrMxsoOMNuSBMTfWykbznV7ACB-W_yMORJDVXJ9VsGXFnCZUOvrDWqprjQJ1TaxiHEjcfi-wn1WeiviNdMNie1TM7riP42QlQ2jybFEwM6DuvhSAUXlqymzP9wCHZ5ROFDLr-g0wgXSqSmVtsnbdbNeoLpoyLfU3ejytH4v_8Qrd24UVilY5TxMVjHzkPuLA_yorVXudTCh4pIrtdEerN1WnKcJFpqcAZXqVOJE3Lt-2GlrvNIMPMWPIm49pHbCm3PB69iHmvGmvj1BAxg&state=cad8855b4bca6bd5966ed7b18152ce1bc604538993352934" for 127.0.0.1 at 2018-01-10 10:51:36 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQCpTpKg-rCssDkXooLdbSnBqIf03nkEspTgSFM5glUkRMGQGcTfebhB5jgJumYJsyd-K_xCh1uFtt4R4zIBxSjCC-ZIFrMxsoOMNuSBMTfWykbznV7ACB-W_yMORJDVXJ9VsGXFnCZUOvrDWqprjQJ1TaxiHEjcfi-wn1WeiviNdMNie1TM7riP42QlQ2jybFEwM6DuvhSAUXlqymzP9wCHZ5ROFDLr-g0wgXSqSmVtsnbdbNeoLpoyLfU3ejytH4v_8Qrd24UVilY5TxMVjHzkPuLA_yorVXudTCh4pIrtdEerN1WnKcJFpqcAZXqVOJE3Lt-2GlrvNIMPMWPIm49pHbCm3PB69iHmvGmvj1BAxg", "state"=>"cad8855b4bca6bd5966ed7b18152ce1bc604538993352934"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 612ms (Views: 72.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-10 10:51:40 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 75ms (Views: 73.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 10:51:42 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 10:51:42 +0530
+Started GET "/auth/facebook/callback?code=AQB4cOa-hy5Izd1ebIJGu5UDfqcrKznVgfjQQKldUX-KupWWx4FtA7vhnAFzSybN_wDYdDb2Iom2jtGSRZNCf6RAmdiyI80315dBkKhYQFKgrpVt_XPxOK3tBKpn0IYf9J3qog-GGUOrxEssrEliXWQ-sUjh5t2BPDSV71fr0AhgRGJuiazEHXkbkI2Acuoh8PyDDhd8cBUB6spXJFC8h9KS5g3HuRQW8y71yOWmm_tBycw9yukI86RAsSe_HlPcb4I7zDKvAvsbNvMESEdkQMnagwkZMRJ0fMgoQKixrejjsQw6GdYb7c2WGYxeN8SrlUxo3WxKsHjxfl3-uTw3ibBHAqUxzYxTAzyeKyVuGkhM2A&state=620b50f6bdeecd959528cd5e96670d7c9a5631954e66f6e0" for 127.0.0.1 at 2018-01-10 10:51:43 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQB4cOa-hy5Izd1ebIJGu5UDfqcrKznVgfjQQKldUX-KupWWx4FtA7vhnAFzSybN_wDYdDb2Iom2jtGSRZNCf6RAmdiyI80315dBkKhYQFKgrpVt_XPxOK3tBKpn0IYf9J3qog-GGUOrxEssrEliXWQ-sUjh5t2BPDSV71fr0AhgRGJuiazEHXkbkI2Acuoh8PyDDhd8cBUB6spXJFC8h9KS5g3HuRQW8y71yOWmm_tBycw9yukI86RAsSe_HlPcb4I7zDKvAvsbNvMESEdkQMnagwkZMRJ0fMgoQKixrejjsQw6GdYb7c2WGYxeN8SrlUxo3WxKsHjxfl3-uTw3ibBHAqUxzYxTAzyeKyVuGkhM2A", "state"=>"620b50f6bdeecd959528cd5e96670d7c9a5631954e66f6e0"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 713ms (Views: 75.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 10:51:59 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 10:52:00 +0530
+Started GET "/auth/facebook/callback?code=AQA6G10f4BVIggjGe_3X5lpWow58ZRWrsMJJ3IlEFn9fH9Ar5GOeeuG8IgIwxcQBxLgw2sLVSb9qPeab2oE1RKbBfKM47QWYdcpeJ1AwRM2QnlJAu9XT9w5_BpOrhXgHyFJFsPFmFdypQIK2GFIddPPDUa4yLCIz7tb_pBT-8RVDxks_OXt0HyPZbivhK66DciZd8JO95D329s4YupKKDkzW9x3o-KOFmFa_neqWwMdqC3QAMfImFLod5P5fpquZwtdKeZAvlfoPxyaUq7zWFNP5d-xnCv5M5VxV4T37cXJFgNf5Zpg_UMyv3cEJtdiTvHlQbY1s_x0SikMTsx67szptVHhA22o9-Z6IGAE9QmbUMg&state=62f6b02a4587cdc9adae120ddd4ef27c971dce73dec5980b" for 127.0.0.1 at 2018-01-10 10:52:00 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQA6G10f4BVIggjGe_3X5lpWow58ZRWrsMJJ3IlEFn9fH9Ar5GOeeuG8IgIwxcQBxLgw2sLVSb9qPeab2oE1RKbBfKM47QWYdcpeJ1AwRM2QnlJAu9XT9w5_BpOrhXgHyFJFsPFmFdypQIK2GFIddPPDUa4yLCIz7tb_pBT-8RVDxks_OXt0HyPZbivhK66DciZd8JO95D329s4YupKKDkzW9x3o-KOFmFa_neqWwMdqC3QAMfImFLod5P5fpquZwtdKeZAvlfoPxyaUq7zWFNP5d-xnCv5M5VxV4T37cXJFgNf5Zpg_UMyv3cEJtdiTvHlQbY1s_x0SikMTsx67szptVHhA22o9-Z6IGAE9QmbUMg", "state"=>"62f6b02a4587cdc9adae120ddd4ef27c971dce73dec5980b"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 853ms (Views: 68.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook/callback?code=AQDzPTsMcaoJwQapbEKnhgkPpnZ3Okwacs4JyrG8gqFC-kiORtT6gc4-zC258ORUy-auv5sRjxhe7svQGZ_aWQmnklT4KasumCXTU-Jyu8KiABlMRqE5jbpbKkP9JWYjeMUM23SYV2Wl1BK_k516eOZbIP01EU_ZPqL3WmP2z-Yl7My-tef0Lp1TEn24fTMjBN59tJfVy2BWvXpHG1hJo83mAq39ziyidPNv_p0KC09bZEJG0nu-tMrYoAZcJNcFSNK_dmZDNY9USveMVjDeSRWqOOQ1tpgbiGRtYw9RKsHKKSNk6STzmKOiHJz3ZTsnqaPH2XDZeAtNnwrutLpevlebovGuLetZG22EqU0IyPYUHw&state=73582337c9ccd1218020b017429cfac98eefc0c78495d799" for 127.0.0.1 at 2018-01-10 10:52:18 +0530
+  
+OmniAuth::Strategies::OAuth2::CallbackError (csrf_detected | CSRF detected):
+  
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:486:in `fail!'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:71:in `callback_phase'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 11:24:20 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 11:24:20 +0530
+Started GET "/auth/facebook/callback?code=AQALXc3QN3ieumB4T-t1BWAidJshecRkra5m8_Ejqjju23OInZvYrOQ_3mNJ27Wa8oL0hQUqUEpNOFDBgPboo5g_o1KW8R0N_6TXtkN5N9HnMu8mI0f0AUNzwI_svAm0l4HYap68Ku_Fo1bh_mkFF6edffm6y6MiC4Fo3I3eTdEw30xcbtxs27PR4dTuCNjeHlC5mCNuOj-_pPuHv5llpN8QHSuvrOaTwns8HqcwY8RyiVFiZI1F4J9YcyNhJDV8MVHAYC9J5NpPPWmpMtJXgZAkgsIXyzfS-ugRDbzlHQ_-G4iPs0ICsqSx9F0Z3JPpNUvNUehHgxBbBnkEFLdhu4bpiVQpxi-lKwo06FLVsob6tA&state=c15232e9c7af31b383edfc9b8317c97b07933f788a4e6ab3" for 127.0.0.1 at 2018-01-10 11:24:21 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQALXc3QN3ieumB4T-t1BWAidJshecRkra5m8_Ejqjju23OInZvYrOQ_3mNJ27Wa8oL0hQUqUEpNOFDBgPboo5g_o1KW8R0N_6TXtkN5N9HnMu8mI0f0AUNzwI_svAm0l4HYap68Ku_Fo1bh_mkFF6edffm6y6MiC4Fo3I3eTdEw30xcbtxs27PR4dTuCNjeHlC5mCNuOj-_pPuHv5llpN8QHSuvrOaTwns8HqcwY8RyiVFiZI1F4J9YcyNhJDV8MVHAYC9J5NpPPWmpMtJXgZAkgsIXyzfS-ugRDbzlHQ_-G4iPs0ICsqSx9F0Z3JPpNUvNUehHgxBbBnkEFLdhu4bpiVQpxi-lKwo06FLVsob6tA", "state"=>"c15232e9c7af31b383edfc9b8317c97b07933f788a4e6ab3"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 695ms (Views: 55.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 11:24:56 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 11:24:57 +0530
+Started GET "/auth/facebook/callback?code=AQBPwihzpjbHEplaEutA7VX1prHqN4LyM2YVZd1wJ3KhkcEnxlRBK_M837bjJG6drCK1bGw-5fcwo6M_z4VpSIwR7YIXtoOnCBYwcejmjH2z9XXdEQZeNM51V2uonErPFyPM7sGumzIktaJ7R8h0hZN6lnU3r3g8peQHJHi8uH_dMsaF4jMBV2inZFFCWGXr5cheCl09IkgKl-7uflcpM4htl6r8YMPSYD_2f7DrSRxRnkXD1fez-MNVawyxL325uOBdo2I1nti5rt6s1FDUNdpdDahvv17unnZ-k8gRmKfACH8ZLkQOwg58gNbttirRiMB_8j6MZZgzXK2DvDPkNClEj-7-GBnSyPhxaJcRN-ulUg&state=06210de07813b0d209a4c2be5bd04f3d09cea9a730769881" for 127.0.0.1 at 2018-01-10 11:24:58 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQBPwihzpjbHEplaEutA7VX1prHqN4LyM2YVZd1wJ3KhkcEnxlRBK_M837bjJG6drCK1bGw-5fcwo6M_z4VpSIwR7YIXtoOnCBYwcejmjH2z9XXdEQZeNM51V2uonErPFyPM7sGumzIktaJ7R8h0hZN6lnU3r3g8peQHJHi8uH_dMsaF4jMBV2inZFFCWGXr5cheCl09IkgKl-7uflcpM4htl6r8YMPSYD_2f7DrSRxRnkXD1fez-MNVawyxL325uOBdo2I1nti5rt6s1FDUNdpdDahvv17unnZ-k8gRmKfACH8ZLkQOwg58gNbttirRiMB_8j6MZZgzXK2DvDPkNClEj-7-GBnSyPhxaJcRN-ulUg", "state"=>"06210de07813b0d209a4c2be5bd04f3d09cea9a730769881"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (5.0ms)
+Completed 200 OK in 603ms (Views: 87.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-01-10 11:25:04 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 97ms (Views: 95.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 11:25:05 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 11:25:05 +0530
+Started GET "/auth/facebook/callback?code=AQCuRm0KH2DObEL7JgvIvoKkCOoD0_YlY6bcysGtnIg3Nn99yRFj4gsY11LcoaqOWmsOgmeXC6dqWYAXTiKAnzshIrTsAweFpowhrWiFzJMVKS9ltL-mjyYXZfzyg9ILIIzM9nxMVTA6Ov_o2gT2G1PCUMaRC6Km237F4ukP7agP6bZRPhikGbKoOUccOR223YBa_FQWPYZ-ySGwHXivBDyA7EOwnIjiHdS-_bplNgS_4YA_O7I9n84eqszs3Y7l5Zk6i7TdV5gfHQYNRD5WLc-w5Z1Vv8eUx9cQ1ALpzxU7PXlFfMf_0w2ZhPVUf7E3OxDDsRu96fEpWkLad53bVFYBo7c1kTnyTjueQ5kw3AXSQA&state=970ef6e8e8b53f96e84acefc7a50bc6cb9c2106f0a6c90b1" for 127.0.0.1 at 2018-01-10 11:25:06 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQCuRm0KH2DObEL7JgvIvoKkCOoD0_YlY6bcysGtnIg3Nn99yRFj4gsY11LcoaqOWmsOgmeXC6dqWYAXTiKAnzshIrTsAweFpowhrWiFzJMVKS9ltL-mjyYXZfzyg9ILIIzM9nxMVTA6Ov_o2gT2G1PCUMaRC6Km237F4ukP7agP6bZRPhikGbKoOUccOR223YBa_FQWPYZ-ySGwHXivBDyA7EOwnIjiHdS-_bplNgS_4YA_O7I9n84eqszs3Y7l5Zk6i7TdV5gfHQYNRD5WLc-w5Z1Vv8eUx9cQ1ALpzxU7PXlFfMf_0w2ZhPVUf7E3OxDDsRu96fEpWkLad53bVFYBo7c1kTnyTjueQ5kw3AXSQA", "state"=>"970ef6e8e8b53f96e84acefc7a50bc6cb9c2106f0a6c90b1"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 585ms (Views: 65.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-01-10 11:26:59 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 76ms (Views: 74.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-01-10 11:29:45 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+Completed 200 OK in 78ms (Views: 76.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 11:29:49 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 11:29:49 +0530
+Started GET "/auth/facebook/callback?code=AQDk2O0Z2lEUr_iW6Umzv5B5EKKERNj8mxhcN4RavB35pRxBYyS_XMSrddqPhLcqwfNNRI3Vw5EOdi6XnjGwFEyq9XlpDh6rGSCj8M3-9FLuW6n7Hy55r2wcia3jCPiP8OsAmcIVzy0upmFvUOw0GnRwWd-jwxyIDlLZKBpKAUqkfoxAoVryWA800ENLOwS9XEsGqRqveFg1evEaZSkOLsK8P8qiAg9H3XKeV6cxqDC7ELEp9F7Mjus9qvHlsGOwKNy29O_rqDDMpYGy0DwJtPGw8m9vvOt62evCM7rETQKhLOVqhhZijdy5l_u2FQfMbwZ3w9FZRSq0tzuP4hMtjwuni2KxbX7xvzm84Sn_rNd8KQ&state=8998cc2544bec28715f0f4559b26ee78bc1be0580cb963bc" for 127.0.0.1 at 2018-01-10 11:29:50 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQDk2O0Z2lEUr_iW6Umzv5B5EKKERNj8mxhcN4RavB35pRxBYyS_XMSrddqPhLcqwfNNRI3Vw5EOdi6XnjGwFEyq9XlpDh6rGSCj8M3-9FLuW6n7Hy55r2wcia3jCPiP8OsAmcIVzy0upmFvUOw0GnRwWd-jwxyIDlLZKBpKAUqkfoxAoVryWA800ENLOwS9XEsGqRqveFg1evEaZSkOLsK8P8qiAg9H3XKeV6cxqDC7ELEp9F7Mjus9qvHlsGOwKNy29O_rqDDMpYGy0DwJtPGw8m9vvOt62evCM7rETQKhLOVqhhZijdy5l_u2FQfMbwZ3w9FZRSq0tzuP4hMtjwuni2KxbX7xvzm84Sn_rNd8KQ", "state"=>"8998cc2544bec28715f0f4559b26ee78bc1be0580cb963bc"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 588ms (Views: 78.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-10 11:29:54 +0530
+Processing by EmployeesController#home as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-10 11:29:54 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (7.7ms)
+Completed 200 OK in 82ms (Views: 80.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 11:29:56 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 11:29:56 +0530
+Started GET "/auth/facebook/callback?code=AQDtEIoxMLjLjzmh6cGx2T0iArWS-nHNzmZM-vgs4kr8Gf5Wm6vt4F9w5M2xF9M6Vsng5BvaHIzReHoOxtjzr4QHUJT4kq06mGxeJcesF8gnBc8KdAobZIT9TSPCwOvPJ32uLJFB1P6kFJql0Hf7hHWKcLcQ9eUd3cJ5475EdONypPD5hBDlKikPu_hcWSmBUT1lyXYAD17l4X2eiuEcoojUL2LPayfbcLDpGbM9_iASRDNbO7P274a8Dj9uEzebUP5TgJdm_2NeVe2aIHZpq_tcwLEFj3cjXTlT6Pla2Aa9ebeS0LSet_SdbmMpdDpeMPHEvAXArxjB5Sz7aWcizo-pgBZ24cO4QZtqQtnvAk7Gog&state=d6654eb93c3a2b63e8e49e5d933130f29c47375ed5c05c01" for 127.0.0.1 at 2018-01-10 11:29:57 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQDtEIoxMLjLjzmh6cGx2T0iArWS-nHNzmZM-vgs4kr8Gf5Wm6vt4F9w5M2xF9M6Vsng5BvaHIzReHoOxtjzr4QHUJT4kq06mGxeJcesF8gnBc8KdAobZIT9TSPCwOvPJ32uLJFB1P6kFJql0Hf7hHWKcLcQ9eUd3cJ5475EdONypPD5hBDlKikPu_hcWSmBUT1lyXYAD17l4X2eiuEcoojUL2LPayfbcLDpGbM9_iASRDNbO7P274a8Dj9uEzebUP5TgJdm_2NeVe2aIHZpq_tcwLEFj3cjXTlT6Pla2Aa9ebeS0LSet_SdbmMpdDpeMPHEvAXArxjB5Sz7aWcizo-pgBZ24cO4QZtqQtnvAk7Gog", "state"=>"d6654eb93c3a2b63e8e49e5d933130f29c47375ed5c05c01"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 619ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-10 11:30:01 +0530
+Processing by EmployeesController#home as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-10 11:30:01 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 77ms (Views: 75.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-10 11:30:08 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 78ms (Views: 75.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 11:37:59 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 11:37:59 +0530
+Started GET "/auth/facebook/callback?code=AQCfU1rOlLGuYOPMoN_QQCWjg3BzomEj2xqej3v5uhPXMR8PGSst8h19SQS8sKSC5Zyz19M5mAH-bg3PZshjQXXICezEHmEj8NLkzcUkth61yO_Uj8t1xF22_QQT8cerl_x3OIingJIK_TUw1fxyH4_uO9hTSxTe4AVnIZ53C5sEtKMGah-EXgQt0ksIPd5X4UB2HdG31sZ-1xtJxFOq5Z3VcrbDGDsqZkGwva7FZtUTPrZt4h8YKkhbGYKFPTqkq6ipxy-_GG-xrduN-ITY86aS47dm_2lQu1HLeOGOU9TRxVUI_aHf8UUllP0Cwkg7_msZmWjkTp_B1nInjGFivXLjdldCNL8fJ6jrPVc9XiuKlg&state=d099fff968f0ec95a78815b0d1f8ed68fdb0a5821532f611" for 127.0.0.1 at 2018-01-10 11:38:00 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQCfU1rOlLGuYOPMoN_QQCWjg3BzomEj2xqej3v5uhPXMR8PGSst8h19SQS8sKSC5Zyz19M5mAH-bg3PZshjQXXICezEHmEj8NLkzcUkth61yO_Uj8t1xF22_QQT8cerl_x3OIingJIK_TUw1fxyH4_uO9hTSxTe4AVnIZ53C5sEtKMGah-EXgQt0ksIPd5X4UB2HdG31sZ-1xtJxFOq5Z3VcrbDGDsqZkGwva7FZtUTPrZt4h8YKkhbGYKFPTqkq6ipxy-_GG-xrduN-ITY86aS47dm_2lQu1HLeOGOU9TRxVUI_aHf8UUllP0Cwkg7_msZmWjkTp_B1nInjGFivXLjdldCNL8fJ6jrPVc9XiuKlg", "state"=>"d099fff968f0ec95a78815b0d1f8ed68fdb0a5821532f611"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 593ms (Views: 66.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook/callback?code=AQCfU1rOlLGuYOPMoN_QQCWjg3BzomEj2xqej3v5uhPXMR8PGSst8h19SQS8sKSC5Zyz19M5mAH-bg3PZshjQXXICezEHmEj8NLkzcUkth61yO_Uj8t1xF22_QQT8cerl_x3OIingJIK_TUw1fxyH4_uO9hTSxTe4AVnIZ53C5sEtKMGah-EXgQt0ksIPd5X4UB2HdG31sZ-1xtJxFOq5Z3VcrbDGDsqZkGwva7FZtUTPrZt4h8YKkhbGYKFPTqkq6ipxy-_GG-xrduN-ITY86aS47dm_2lQu1HLeOGOU9TRxVUI_aHf8UUllP0Cwkg7_msZmWjkTp_B1nInjGFivXLjdldCNL8fJ6jrPVc9XiuKlg&state=d099fff968f0ec95a78815b0d1f8ed68fdb0a5821532f611" for 127.0.0.1 at 2018-01-10 11:38:07 +0530
+  
+OmniAuth::Strategies::OAuth2::CallbackError (csrf_detected | CSRF detected):
+  
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:486:in `fail!'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:71:in `callback_phase'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-01-10 11:38:10 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 62ms (Views: 60.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 11:42:49 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 11:42:49 +0530
+Started GET "/auth/facebook/callback?code=AQAzYGyINWulg9TG8OncrS16DaD3cNezxGUV_OxZrfigePx_vVGE0xX2g6FhZS0DSER02O9r9npkPKCF1Y7x9mOgSP4qHCqE0922Ob0GU6-kDqmRuWH6ske5x70OsXsKqCK2EB3Oq5eoYGXCeePgmxBk8gUwVJqdnAE3bGku8uECp9c5bPll6qB0M6nc2Dr-fsBMdB1r-CKAzbLQBTa3xwzaRTLDN1v-bQAghVqpOgWXq5k_cKavMnOnGVxQv1CXnaK_UAtPm1nQfd2030kRbhXM41VVP-_C684d2syPzigDmUkBN97Wuhgz5195gDqCnbC9LNY8zbuJEnZeZrakhO41HmVf5l0ZeL7zCrnBPabbbg&state=ffb62c0e281c09310ec72737f9cc5824645374caff0c44fb" for 127.0.0.1 at 2018-01-10 11:42:50 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQAzYGyINWulg9TG8OncrS16DaD3cNezxGUV_OxZrfigePx_vVGE0xX2g6FhZS0DSER02O9r9npkPKCF1Y7x9mOgSP4qHCqE0922Ob0GU6-kDqmRuWH6ske5x70OsXsKqCK2EB3Oq5eoYGXCeePgmxBk8gUwVJqdnAE3bGku8uECp9c5bPll6qB0M6nc2Dr-fsBMdB1r-CKAzbLQBTa3xwzaRTLDN1v-bQAghVqpOgWXq5k_cKavMnOnGVxQv1CXnaK_UAtPm1nQfd2030kRbhXM41VVP-_C684d2syPzigDmUkBN97Wuhgz5195gDqCnbC9LNY8zbuJEnZeZrakhO41HmVf5l0ZeL7zCrnBPabbbg", "state"=>"ffb62c0e281c09310ec72737f9cc5824645374caff0c44fb"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 635ms (Views: 80.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook/callback?code=AQAzYGyINWulg9TG8OncrS16DaD3cNezxGUV_OxZrfigePx_vVGE0xX2g6FhZS0DSER02O9r9npkPKCF1Y7x9mOgSP4qHCqE0922Ob0GU6-kDqmRuWH6ske5x70OsXsKqCK2EB3Oq5eoYGXCeePgmxBk8gUwVJqdnAE3bGku8uECp9c5bPll6qB0M6nc2Dr-fsBMdB1r-CKAzbLQBTa3xwzaRTLDN1v-bQAghVqpOgWXq5k_cKavMnOnGVxQv1CXnaK_UAtPm1nQfd2030kRbhXM41VVP-_C684d2syPzigDmUkBN97Wuhgz5195gDqCnbC9LNY8zbuJEnZeZrakhO41HmVf5l0ZeL7zCrnBPabbbg&state=ffb62c0e281c09310ec72737f9cc5824645374caff0c44fb" for 127.0.0.1 at 2018-01-10 11:43:10 +0530
+  
+OmniAuth::Strategies::OAuth2::CallbackError (csrf_detected | CSRF detected):
+  
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:486:in `fail!'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:71:in `callback_phase'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-01-10 11:45:03 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 68ms (Views: 66.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 11:45:06 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 11:45:06 +0530
+Started GET "/auth/facebook/callback?code=AQBCgrI4HIxuGns8N9jqfRBCiCYuoxAO564Ra_ZbiJ0gIsdhbcFgx-f5IxqAdO3h9l3vSKzvQUtDUbRWQ6CMu6Kgt6FObmIFC1Z6pfONc0sXMRFuONlzHpfs8puHfnyo4MQBMjQcdIexQgCn5DPv14KKRugwsLz3xIQosLhq5EbPZjxrcmn_uWB-zEf0K-hLl8dyJZcNbQJH_-qALYtEbZ0ImTv3mDNN4KiS7F30dL6oOJCGBqsVfUVVOry2q_0za40CwtBr0SFzORnczp3sqYEdnhV_qpR-5pMc992-z3gAb7w5Mjq5TA4epY8XXBA8_Rdussv95tTFn3sPHE2JYqHCOS-Wj1CaRx5ZZuxFfe4Eug&state=4d6a618d748c0536d72809c1afa9ebfcc49e7c1eaea06caa" for 127.0.0.1 at 2018-01-10 11:45:07 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQBCgrI4HIxuGns8N9jqfRBCiCYuoxAO564Ra_ZbiJ0gIsdhbcFgx-f5IxqAdO3h9l3vSKzvQUtDUbRWQ6CMu6Kgt6FObmIFC1Z6pfONc0sXMRFuONlzHpfs8puHfnyo4MQBMjQcdIexQgCn5DPv14KKRugwsLz3xIQosLhq5EbPZjxrcmn_uWB-zEf0K-hLl8dyJZcNbQJH_-qALYtEbZ0ImTv3mDNN4KiS7F30dL6oOJCGBqsVfUVVOry2q_0za40CwtBr0SFzORnczp3sqYEdnhV_qpR-5pMc992-z3gAb7w5Mjq5TA4epY8XXBA8_Rdussv95tTFn3sPHE2JYqHCOS-Wj1CaRx5ZZuxFfe4Eug", "state"=>"4d6a618d748c0536d72809c1afa9ebfcc49e7c1eaea06caa"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 585ms (Views: 61.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-01-10 12:38:41 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 74ms (Views: 72.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-01-10 12:38:42 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 77ms (Views: 75.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:38:45 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:38:45 +0530
+Started GET "/auth/facebook/callback?code=AQC0fwYEarwmnWw7cupgIipUV6pm8tTxvyERzYZV8HhLpWurnkUcwi48xDhA7riv58M6X5cESHXAE0xA1xDQ7d-jSKQHMXX_J1hV6OFGLT2llNg-YZJFaBVRBwIlSmmugW9MSZMB0LpteUZ7DJL4g-QgFzGOn_-Nj0NXp_6rXbk2T4yD8In7YGDQnUpEfILUq_4TYoLQln0TfUS0Wd8y8jx3GmNMgL5VaL0IMwAN_wSmbUP4gAwI5nZhykFpR-Kji_1B4pW4WgwVeuCFMJC2ocHia0ipKiSNfAGPdi7-KFTgXeuAFC1jRd98WbDQS6sFn3D3Y_nah7Uw4ltQG7snhUwxuijBOXHHznBDTdVMkki61A&state=150d32cc2fc488ab51b596c0ca54e3d8f0d67e61f76c66ba" for 127.0.0.1 at 2018-01-10 12:38:46 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQC0fwYEarwmnWw7cupgIipUV6pm8tTxvyERzYZV8HhLpWurnkUcwi48xDhA7riv58M6X5cESHXAE0xA1xDQ7d-jSKQHMXX_J1hV6OFGLT2llNg-YZJFaBVRBwIlSmmugW9MSZMB0LpteUZ7DJL4g-QgFzGOn_-Nj0NXp_6rXbk2T4yD8In7YGDQnUpEfILUq_4TYoLQln0TfUS0Wd8y8jx3GmNMgL5VaL0IMwAN_wSmbUP4gAwI5nZhykFpR-Kji_1B4pW4WgwVeuCFMJC2ocHia0ipKiSNfAGPdi7-KFTgXeuAFC1jRd98WbDQS6sFn3D3Y_nah7Uw4ltQG7snhUwxuijBOXHHznBDTdVMkki61A", "state"=>"150d32cc2fc488ab51b596c0ca54e3d8f0d67e61f76c66ba"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 598ms (Views: 72.9ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-01-10 12:38:50 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 63ms (Views: 61.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-01-10 12:40:39 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 80ms (Views: 78.2ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:40:41 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:40:41 +0530
+Started GET "/auth/facebook/callback?code=AQBmBiC7LaQuLDg6dU242qi9MtQ4aOXc5lnmxwtEhKsfVKGpb78U_5h3R86B9BNrhfTO9o9MQ7oeqFxTwCXtqTjMZDGgL1_jAtFRN1VgJ1GjNimkBeo2L85xpW6AMT9DBqcTSbJlwHkR_-lBWi2M72UmtJSFokFpT9NiOJcYkDX7tAjOl1MxCceNeBLPVxUGNoFbTOch8K1BfOPxuFNWcR5OMl8xZW4GVsgU6GCU0_tFRpi_xJiCqDRhjGvAAGrfRfUmfysQ8J8L_xLDo17IQCdzAk0rFSpGTInSdxkFrbQedeAy0bATtGOfSmu54dy0hIEXQrKs3f_UZ1UKh4tH86dM0mEsFwmtuOUGbzrwVvob_w&state=dd2e18ed4896072125dee5be8c4c0c51b2792d7676725edb" for 127.0.0.1 at 2018-01-10 12:40:42 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQBmBiC7LaQuLDg6dU242qi9MtQ4aOXc5lnmxwtEhKsfVKGpb78U_5h3R86B9BNrhfTO9o9MQ7oeqFxTwCXtqTjMZDGgL1_jAtFRN1VgJ1GjNimkBeo2L85xpW6AMT9DBqcTSbJlwHkR_-lBWi2M72UmtJSFokFpT9NiOJcYkDX7tAjOl1MxCceNeBLPVxUGNoFbTOch8K1BfOPxuFNWcR5OMl8xZW4GVsgU6GCU0_tFRpi_xJiCqDRhjGvAAGrfRfUmfysQ8J8L_xLDo17IQCdzAk0rFSpGTInSdxkFrbQedeAy0bATtGOfSmu54dy0hIEXQrKs3f_UZ1UKh4tH86dM0mEsFwmtuOUGbzrwVvob_w", "state"=>"dd2e18ed4896072125dee5be8c4c0c51b2792d7676725edb"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 833ms (Views: 74.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-01-10 12:41:37 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 69ms (Views: 67.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-01-10 12:41:39 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 69ms (Views: 67.4ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:41:41 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:41:42 +0530
+Started GET "/auth/facebook/callback?code=AQCSqMJcQ7YNQmDO86yZKk_SbgQg4t0RwN9E82K7LZYqb-Hk6pAwL_fxBCNYiU3gVrJsS5zyVXHZ3pr_FUSvd9V3c6F1luw2GeudwsaEZBoV_FrT7TURUAYzxC2NsWuaMPrSVzoc94I6KaMUEAYgrcLbyr_TL_Wh-m-XsK8KzzKDklFXtEB8Qd1NQI7wM2ltuHODUvWP3rdhxdWaiTGOLvpzJMIdDpQr9mhur_op4YCO3YgLyQjx9Fov_NQZzFZIM_dhltPEwzvGNlvg6eLkPOeXdR8C-k-w1Pj8MP-f53MWrtI8vu5sg8QSqPKibhBjHmZe-U0ruN1q0mN7Ro8huM0FIyZaG2RPD8v4xj6z-EN0Xg&state=90424903ad090c54061c4dce4014debe47b59d41ee3444f8" for 127.0.0.1 at 2018-01-10 12:41:42 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQCSqMJcQ7YNQmDO86yZKk_SbgQg4t0RwN9E82K7LZYqb-Hk6pAwL_fxBCNYiU3gVrJsS5zyVXHZ3pr_FUSvd9V3c6F1luw2GeudwsaEZBoV_FrT7TURUAYzxC2NsWuaMPrSVzoc94I6KaMUEAYgrcLbyr_TL_Wh-m-XsK8KzzKDklFXtEB8Qd1NQI7wM2ltuHODUvWP3rdhxdWaiTGOLvpzJMIdDpQr9mhur_op4YCO3YgLyQjx9Fov_NQZzFZIM_dhltPEwzvGNlvg6eLkPOeXdR8C-k-w1Pj8MP-f53MWrtI8vu5sg8QSqPKibhBjHmZe-U0ruN1q0mN7Ro8huM0FIyZaG2RPD8v4xj6z-EN0Xg", "state"=>"90424903ad090c54061c4dce4014debe47b59d41ee3444f8"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 709ms (Views: 76.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-01-10 12:42:00 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 68ms (Views: 66.8ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:42:02 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:42:02 +0530
+Started GET "/auth/facebook/callback?code=AQCdiddek2F87Duz_je3COCoItEMzo401JbkepZmwH9Gtvao8ciV8ZHPe0UKVyvtZgjV3CQjMMQJ0dznoodl2gPlJg2aFtg0mrBuTpeNz_LE1d0wG7szY-BirCKYTn1MSTkaqq4eQ2nju8tFKw9bR-vQHWI0BvwTlVhgY4wSHfyTrtS54-w0GzU8keJvLTQgWSKLtNCXVSPC0Y14nmUbz89maMmrnuCa7Ze59E4HC_LBfYCv6y9Jpra4sK_Pk_rgI15AsO7FEacnXLzKWF-6kpFc_XBkTyIVmC0DcKNZqtcW33c_J_Oon0lO77j7nGY27e1VH_9y-ZEb2EeRnYF6j86r1EVp13JR7RIy22MITomtXQ&state=f603bc7504e0b3ae7c85a0c7632717f6109cc84312c5f777" for 127.0.0.1 at 2018-01-10 12:42:03 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQCdiddek2F87Duz_je3COCoItEMzo401JbkepZmwH9Gtvao8ciV8ZHPe0UKVyvtZgjV3CQjMMQJ0dznoodl2gPlJg2aFtg0mrBuTpeNz_LE1d0wG7szY-BirCKYTn1MSTkaqq4eQ2nju8tFKw9bR-vQHWI0BvwTlVhgY4wSHfyTrtS54-w0GzU8keJvLTQgWSKLtNCXVSPC0Y14nmUbz89maMmrnuCa7Ze59E4HC_LBfYCv6y9Jpra4sK_Pk_rgI15AsO7FEacnXLzKWF-6kpFc_XBkTyIVmC0DcKNZqtcW33c_J_Oon0lO77j7nGY27e1VH_9y-ZEb2EeRnYF6j86r1EVp13JR7RIy22MITomtXQ", "state"=>"f603bc7504e0b3ae7c85a0c7632717f6109cc84312c5f777"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 701ms (Views: 63.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-01-10 12:42:45 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 63ms (Views: 61.9ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:42:48 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:42:48 +0530
+Started GET "/auth/facebook/callback?code=AQCJuajQpcbotsONZYcNI-BgICEQHuENHUyU5nNhFik4yzBFD6e-opsw0c06u2P1N2Jj-O9gmVbkA3YX1Bx1oOvGK8Q5CifEeZpjHjw-Z92tOaMlHQMD5BJN9gRkNL_3lyLLls62_RvBXkVkGPSMtdEZEOtmQb1kKN89ZSVUQ339Fw0zwM0gbQJGpVaYibOutFogQ9-cdIEP1z59WB1JkBbT1bKBD3wEMCTVVp4nMc79_BMWKLuBlxMHcJBssHtyVRMlM_m-PvjBkcVSsoogUf0_UMSDDyxnrudCv-53anryJiVcQ2BEq28N3h9tKRDoJDAzbagLQQlS14m9lZ-tfO8y3dzzLKPYAuc5NlV-ZRD5IA&state=c36cd398b996c1d2f5d8ff63efb9589495384288a5ef6241" for 127.0.0.1 at 2018-01-10 12:42:49 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQCJuajQpcbotsONZYcNI-BgICEQHuENHUyU5nNhFik4yzBFD6e-opsw0c06u2P1N2Jj-O9gmVbkA3YX1Bx1oOvGK8Q5CifEeZpjHjw-Z92tOaMlHQMD5BJN9gRkNL_3lyLLls62_RvBXkVkGPSMtdEZEOtmQb1kKN89ZSVUQ339Fw0zwM0gbQJGpVaYibOutFogQ9-cdIEP1z59WB1JkBbT1bKBD3wEMCTVVp4nMc79_BMWKLuBlxMHcJBssHtyVRMlM_m-PvjBkcVSsoogUf0_UMSDDyxnrudCv-53anryJiVcQ2BEq28N3h9tKRDoJDAzbagLQQlS14m9lZ-tfO8y3dzzLKPYAuc5NlV-ZRD5IA", "state"=>"c36cd398b996c1d2f5d8ff63efb9589495384288a5ef6241"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 873ms (Views: 66.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-10 12:43:12 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 65ms (Views: 63.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-10 12:43:37 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 76ms (Views: 73.4ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:43:39 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:43:39 +0530
+Started GET "/auth/facebook/callback?code=AQDQdCHdcFObS1_CKejNCevb2_5w9l3CUmi8CjBV5Je8U1Wmiourcf60OvcLkLc-zgDA0jdpnHZYEQ2y3RL8pqlyZP_DeaZj6IfT_wOtI0KPbsVvcm9c61LQf4DJKqe4ZM6dBaVmOvWX6DlbLXAmTFg8DWRBaCf5amvuqHIGMm94vPs-VtiCLPeTA54kI3uTujjO3KymBXyC8c9Go05gSfgGgF4cxOB7bGwh0yjK7FTyXu2TAwolgmynLFwZfmfp74ssFAVPWKyMzgMnJAz_zNQa0zFv1OxF11jVmbcSyF64qYjtn50PFYyh1K-2w5GtIURslY2ed3-z7c1Qz42MYY-K3kXEieAksflxhQF5Oyv2og&state=ffa430cae8c231abf01a65df971dd321aae2118aa228c6f9" for 127.0.0.1 at 2018-01-10 12:43:40 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQDQdCHdcFObS1_CKejNCevb2_5w9l3CUmi8CjBV5Je8U1Wmiourcf60OvcLkLc-zgDA0jdpnHZYEQ2y3RL8pqlyZP_DeaZj6IfT_wOtI0KPbsVvcm9c61LQf4DJKqe4ZM6dBaVmOvWX6DlbLXAmTFg8DWRBaCf5amvuqHIGMm94vPs-VtiCLPeTA54kI3uTujjO3KymBXyC8c9Go05gSfgGgF4cxOB7bGwh0yjK7FTyXu2TAwolgmynLFwZfmfp74ssFAVPWKyMzgMnJAz_zNQa0zFv1OxF11jVmbcSyF64qYjtn50PFYyh1K-2w5GtIURslY2ed3-z7c1Qz42MYY-K3kXEieAksflxhQF5Oyv2og", "state"=>"ffa430cae8c231abf01a65df971dd321aae2118aa228c6f9"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 814ms (Views: 63.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-10 12:45:19 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 70ms (Views: 68.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-10 12:45:22 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 66ms (Views: 63.7ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:45:24 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:45:24 +0530
+Started GET "/auth/facebook/callback?code=AQCA6uqAimX5eHKmUw9Ta_D83A9kGwRF_Y7NebVfRGln3FUkIjpPCv41lk6lr_GOfN0PkEwNB2GV1FYS-yZZV5JgoW6CT1jO_lKXk13BnBq30UdUh_zzoE6sS8VAvJL8xdtQ7D_BQP82qmtqJqYhwzJbXl8PXJq5Q0wSSa5SNOisnyjjrPS3ITN7tww3FS1QfTHN5mYJG329eL3uOOCp8y8MiV2B3-3mmi6s7k7jM1m3LnSn8XmsTloUYHEQTZ-_PuNJEz64STHAvSAfa9BFgvRGNj9OzqWZjxV48q3Obq9NZ30X6mqzsiR3prgNkEOywLm3RHgDrkwbQTCBjaQr0K5pmhuqTMuk5GqOpAzfPwzr6g&state=ad92a9f848ddef128b3fd7e6ff1cd92e24e098197be03cbf" for 127.0.0.1 at 2018-01-10 12:45:25 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQCA6uqAimX5eHKmUw9Ta_D83A9kGwRF_Y7NebVfRGln3FUkIjpPCv41lk6lr_GOfN0PkEwNB2GV1FYS-yZZV5JgoW6CT1jO_lKXk13BnBq30UdUh_zzoE6sS8VAvJL8xdtQ7D_BQP82qmtqJqYhwzJbXl8PXJq5Q0wSSa5SNOisnyjjrPS3ITN7tww3FS1QfTHN5mYJG329eL3uOOCp8y8MiV2B3-3mmi6s7k7jM1m3LnSn8XmsTloUYHEQTZ-_PuNJEz64STHAvSAfa9BFgvRGNj9OzqWZjxV48q3Obq9NZ30X6mqzsiR3prgNkEOywLm3RHgDrkwbQTCBjaQr0K5pmhuqTMuk5GqOpAzfPwzr6g", "state"=>"ad92a9f848ddef128b3fd7e6ff1cd92e24e098197be03cbf"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 576ms (Views: 63.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-10 12:45:39 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+Completed 200 OK in 70ms (Views: 69.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-10 12:45:51 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 66ms (Views: 64.3ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:45:52 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:45:53 +0530
+Started GET "/auth/facebook/callback?code=AQB-fEFET11247FEVyr2-G2b6CO8a951VlwavnCLOHU_2qZqXVsv5d9Jb0GKnMc2Iax1XXCKZK8IiBs79kmiorhKiwDktY1sBnnLZ67LOYFIDDnegc_0H6aQ-Y0oqJk1BNSNjkXT5ymXYEos-KQlfE6-6WpjitRU-pTlrV0Y__9YTghF8pQ-SQI7h_CU-qTOd7HtG9StESTukAHWBeRDeJ1olLLKnIbCG1gES1MX6-6w4OeDO7BGOU46OWbeN6Siyt22W6TFRl8XJQD3FqwiR8aDD6Q78GQitpMmGIOec4fmRu4qDps5y0wsMASXZJnkTBNBxN6rgaHZRFFJrWEdggDzdRR-XuAkfoPm41ocg-dJ3A&state=d1be57435ab55c5755fafafa038d51f4bd438baa344442e6" for 127.0.0.1 at 2018-01-10 12:45:53 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQB-fEFET11247FEVyr2-G2b6CO8a951VlwavnCLOHU_2qZqXVsv5d9Jb0GKnMc2Iax1XXCKZK8IiBs79kmiorhKiwDktY1sBnnLZ67LOYFIDDnegc_0H6aQ-Y0oqJk1BNSNjkXT5ymXYEos-KQlfE6-6WpjitRU-pTlrV0Y__9YTghF8pQ-SQI7h_CU-qTOd7HtG9StESTukAHWBeRDeJ1olLLKnIbCG1gES1MX6-6w4OeDO7BGOU46OWbeN6Siyt22W6TFRl8XJQD3FqwiR8aDD6Q78GQitpMmGIOec4fmRu4qDps5y0wsMASXZJnkTBNBxN6rgaHZRFFJrWEdggDzdRR-XuAkfoPm41ocg-dJ3A", "state"=>"d1be57435ab55c5755fafafa038d51f4bd438baa344442e6"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 724ms (Views: 85.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-10 12:45:58 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 66ms (Views: 63.9ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:49:36 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:49:37 +0530
+Started GET "/auth/facebook/callback?code=AQDYK8l2uuLc964MVBzPZt6MntK3AzZlEhaNaOVmXEZJ6Pc-T-zy6mwIP2GyuQiawha--38p5Lff13Ziw9in9OMD1Gbte9BbCo5QVGBw6S1eexBJqRehqTyr3CKXkk0h08SnJJeTA0S_bw5RInBPm5T_fd4x1N-SQ7al1NVBXosUTyqsTuUyGvcxZJUjA3EyHGzafJFmOIurjS-nudC73RP7tzQyxphOZmgy-_ido-P8xHJShQmi2SbVXnCVqBeWuonaDLxf--PcOPoVTYlZMXmc5b4Kqho1kmIrHB56y0tt8fa8TDiWuC6hofFlQCaPVhvbfToSKx5akkuU-NuCVaDdRzneg2IO9n8meusAY8dQzg&state=5f6c143bda53736ea4168b4aad2d9dbd7dd80efc8508fc69" for 127.0.0.1 at 2018-01-10 12:49:37 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQDYK8l2uuLc964MVBzPZt6MntK3AzZlEhaNaOVmXEZJ6Pc-T-zy6mwIP2GyuQiawha--38p5Lff13Ziw9in9OMD1Gbte9BbCo5QVGBw6S1eexBJqRehqTyr3CKXkk0h08SnJJeTA0S_bw5RInBPm5T_fd4x1N-SQ7al1NVBXosUTyqsTuUyGvcxZJUjA3EyHGzafJFmOIurjS-nudC73RP7tzQyxphOZmgy-_ido-P8xHJShQmi2SbVXnCVqBeWuonaDLxf--PcOPoVTYlZMXmc5b4Kqho1kmIrHB56y0tt8fa8TDiWuC6hofFlQCaPVhvbfToSKx5akkuU-NuCVaDdRzneg2IO9n8meusAY8dQzg", "state"=>"5f6c143bda53736ea4168b4aad2d9dbd7dd80efc8508fc69"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 713ms (Views: 65.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-10 12:50:11 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (31.6ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (8.3ms)
+Completed 200 OK in 365ms (Views: 352.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:50:15 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:50:15 +0530
+Started GET "/auth/facebook/callback?code=AQCDgP20a7JHcrhbRUtO9AaXnjFFQCJ3soZw3-6D5uPrqMnkRXiJx2l0zS3pq-dbmds_R8-1DlRgTEUJLGvm4EcWXoEErRXaGU_1O1FEPAJ1CgobRy-bWzqodCU2Q9PtnfA8jVcdODc9PAMER_8RqmTXYNCntvzh9eLuy-1YqmrL699sKoEuzXYfjrRSt1Rlhq74bHiP2Y4i55QROWwoww_at98f5SZvRGuEINbEXcsSe2Vj121Tt4fdyyO7t-ngeU-Obuojtck-Y3oQllQWanp7aVxQn_NKe1kXJ5jKu-eRx17XO7tVPu2gLi06XN8wEAFuxko-T0bxIXv-1oT8DltvgUAndXHbY7nrEhCy6mbp_A&state=92162e6cc8660d5c4b34cd4e31c4fefa2a89dde38741e4a2" for 127.0.0.1 at 2018-01-10 12:50:16 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQCDgP20a7JHcrhbRUtO9AaXnjFFQCJ3soZw3-6D5uPrqMnkRXiJx2l0zS3pq-dbmds_R8-1DlRgTEUJLGvm4EcWXoEErRXaGU_1O1FEPAJ1CgobRy-bWzqodCU2Q9PtnfA8jVcdODc9PAMER_8RqmTXYNCntvzh9eLuy-1YqmrL699sKoEuzXYfjrRSt1Rlhq74bHiP2Y4i55QROWwoww_at98f5SZvRGuEINbEXcsSe2Vj121Tt4fdyyO7t-ngeU-Obuojtck-Y3oQllQWanp7aVxQn_NKe1kXJ5jKu-eRx17XO7tVPu2gLi06XN8wEAFuxko-T0bxIXv-1oT8DltvgUAndXHbY7nrEhCy6mbp_A", "state"=>"92162e6cc8660d5c4b34cd4e31c4fefa2a89dde38741e4a2"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 686ms (Views: 51.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-01-10 12:53:29 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 89ms (Views: 87.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:53:39 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 12:53:40 +0530
+Started GET "/auth/facebook/callback?code=AQAAo68bLiHNiah5QlcIMSKchf772KRUx4EM_tRIi6lq7ZyhlFHIXv4-Akza5327vqlRI3X-qIMaJPbA59J0x8SFYSheLRwWH8rkIralJdPkgsLy5Vzq8oYo5glWd8o7uxK5JMwyI2hHgO7ogPW5xP-LuAkTTqMjGlUIT8iNGRSSBirXnjiZXZsZ1yjvKD1IEQ_Ea2DJzkJnh31RNnFVsyGmBKUHPkUD8Cxu5rIk__NNHc59yRiEQlL0hSBFAVugE0vIz7b9lemdCqc1sdx_Q2rWxnQvy1zfGqLSQwft6hUj23ZQd7w5SIXctLYSI8LGfdAWcxuuIyqqt8IddwirqKQQSyB7gPB81j-Ot3KKsghN4g&state=24db4c1ae340f2883469a27c7f5a5556fbe19c1f5b8edab9" for 127.0.0.1 at 2018-01-10 12:53:40 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQAAo68bLiHNiah5QlcIMSKchf772KRUx4EM_tRIi6lq7ZyhlFHIXv4-Akza5327vqlRI3X-qIMaJPbA59J0x8SFYSheLRwWH8rkIralJdPkgsLy5Vzq8oYo5glWd8o7uxK5JMwyI2hHgO7ogPW5xP-LuAkTTqMjGlUIT8iNGRSSBirXnjiZXZsZ1yjvKD1IEQ_Ea2DJzkJnh31RNnFVsyGmBKUHPkUD8Cxu5rIk__NNHc59yRiEQlL0hSBFAVugE0vIz7b9lemdCqc1sdx_Q2rWxnQvy1zfGqLSQwft6hUj23ZQd7w5SIXctLYSI8LGfdAWcxuuIyqqt8IddwirqKQQSyB7gPB81j-Ot3KKsghN4g", "state"=>"24db4c1ae340f2883469a27c7f5a5556fbe19c1f5b8edab9"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 702ms (Views: 63.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook/callback?code=AQAAo68bLiHNiah5QlcIMSKchf772KRUx4EM_tRIi6lq7ZyhlFHIXv4-Akza5327vqlRI3X-qIMaJPbA59J0x8SFYSheLRwWH8rkIralJdPkgsLy5Vzq8oYo5glWd8o7uxK5JMwyI2hHgO7ogPW5xP-LuAkTTqMjGlUIT8iNGRSSBirXnjiZXZsZ1yjvKD1IEQ_Ea2DJzkJnh31RNnFVsyGmBKUHPkUD8Cxu5rIk__NNHc59yRiEQlL0hSBFAVugE0vIz7b9lemdCqc1sdx_Q2rWxnQvy1zfGqLSQwft6hUj23ZQd7w5SIXctLYSI8LGfdAWcxuuIyqqt8IddwirqKQQSyB7gPB81j-Ot3KKsghN4g&state=24db4c1ae340f2883469a27c7f5a5556fbe19c1f5b8edab9" for 127.0.0.1 at 2018-01-10 13:03:12 +0530
+  
+OmniAuth::Strategies::OAuth2::CallbackError (csrf_detected | CSRF detected):
+  
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:486:in `fail!'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:71:in `callback_phase'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/login" for 127.0.0.1 at 2018-01-10 13:03:19 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 74ms (Views: 72.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 13:03:21 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 13:03:22 +0530
+Started GET "/auth/facebook/callback?code=AQAYsTmkgD6xafkCcjFNu1axtJu5GIym2_lC7cytgGIczhqUkYC2xysjjVgw2sckla3DFgveD__I-ZvffFs4PFyBiL-j_TRAmXBGzfx4tHnnHQTcsqLGIACK30fx0aylWJoWqVbAG_lFMG7nndJcWZSq-u04ycPjre_E3W6h7zTFr8z-klExNejFrDjHzH99eehifYUwMdQ5jMb0nDM5978H-k-0KMmaikjxIAmza5yd0-_fh1A6V-ZneXCPupTyY1a-5eGhGer-PIOWtCSUi88YEhjcWkfNOvj4Dt8KQFKiwv9BQQJyTLr4NIQ8GmJFbhnmxxrGEQ8Fs6wHEhQyq9L1fLI4tFnIxToyMGk_apUyIw&state=6278b15c65fd5bd86dd70350d7b768284f11f90d4512fe42" for 127.0.0.1 at 2018-01-10 13:03:22 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQAYsTmkgD6xafkCcjFNu1axtJu5GIym2_lC7cytgGIczhqUkYC2xysjjVgw2sckla3DFgveD__I-ZvffFs4PFyBiL-j_TRAmXBGzfx4tHnnHQTcsqLGIACK30fx0aylWJoWqVbAG_lFMG7nndJcWZSq-u04ycPjre_E3W6h7zTFr8z-klExNejFrDjHzH99eehifYUwMdQ5jMb0nDM5978H-k-0KMmaikjxIAmza5yd0-_fh1A6V-ZneXCPupTyY1a-5eGhGer-PIOWtCSUi88YEhjcWkfNOvj4Dt8KQFKiwv9BQQJyTLr4NIQ8GmJFbhnmxxrGEQ8Fs6wHEhQyq9L1fLI4tFnIxToyMGk_apUyIw", "state"=>"6278b15c65fd5bd86dd70350d7b768284f11f90d4512fe42"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 709ms (Views: 69.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-10 13:04:59 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (28.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (7.7ms)
+Completed 200 OK in 410ms (Views: 394.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 13:05:02 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 13:05:02 +0530
+Started GET "/auth/facebook/callback?code=AQCfoSzfcHI9ITlGNu1e75HVZ6g0IwyNXrtOO0zkK_ZdC6c5p76FA1I-npPBI1JtFWZBmNLw8xWF5gvcQKp0MdLEEKZe3rR0_w9nWP0p5D1HQqYG9j0oxpgYTMmSrV8Rwzh68GsFm8RUEzeYXb4xsDRl2CSQ4KhUXqVhcoG0eGamVgZxQAwNU1gPPSmOlRywVuEj3MiMSPTAcKXOyxkB1uCNMh1USdg7q4p-AF23YyKzoMI8T_oHGKxH4r-JwehQPHRsmKd8NX1P8fMVQlfCQsid010eMHJK9zgkmYP2NO4EUtcGE6D-K3ZuGqcCZiQYB2z1n4equysA1H8OgaK1_Tj1qXoUpInfdB7KNfyiOc6kRQ&state=e0ef29ed456e4d48d40a5c89124ea035feeb8a4abcf65b35" for 127.0.0.1 at 2018-01-10 13:05:05 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQCfoSzfcHI9ITlGNu1e75HVZ6g0IwyNXrtOO0zkK_ZdC6c5p76FA1I-npPBI1JtFWZBmNLw8xWF5gvcQKp0MdLEEKZe3rR0_w9nWP0p5D1HQqYG9j0oxpgYTMmSrV8Rwzh68GsFm8RUEzeYXb4xsDRl2CSQ4KhUXqVhcoG0eGamVgZxQAwNU1gPPSmOlRywVuEj3MiMSPTAcKXOyxkB1uCNMh1USdg7q4p-AF23YyKzoMI8T_oHGKxH4r-JwehQPHRsmKd8NX1P8fMVQlfCQsid010eMHJK9zgkmYP2NO4EUtcGE6D-K3ZuGqcCZiQYB2z1n4equysA1H8OgaK1_Tj1qXoUpInfdB7KNfyiOc6kRQ", "state"=>"e0ef29ed456e4d48d40a5c89124ea035feeb8a4abcf65b35"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 700ms (Views: 64.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook/callback?code=AQDx1qbUHgwCOobyZtGN-D662N81iEsTo6F_ixIcRGHxyPdPhJtOiQuIQWE7I6q0IRnD0kW4Nq_iycdBwkJ23lQloX5ITH--LNCUdhx0_8byrVnGmhvrgqc3G00i5YpXxq6q7OoBv68ttRq-YbED8aaM2fvLHrcPGzRkniDQ4bNwKjlXS0rhcCDjMyGLK5jZnLRNQPshZo5m508k-5tBKfr6bJVjEwio6kyIfq1fwlNkCy7G8rt6XqqvRscj7ScHV7KuYCgedI_yzk8BqqfAcCQWxuT5lFXC38tLZ2B-pZqpNwMbDd9KyV3RUwC6a49Oy-rVVNN7kxSdATn49PBc6tf7kdEfCEjEK15F8fAqhL5MNw&state=e0ef29ed456e4d48d40a5c89124ea035feeb8a4abcf65b35" for 127.0.0.1 at 2018-01-10 13:06:12 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+OmniAuth::Strategies::OAuth2::CallbackError (csrf_detected | CSRF detected):
+  
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:486:in `fail!'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:71:in `callback_phase'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-01-10 13:06:15 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (22.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (7.5ms)
+Completed 200 OK in 313ms (Views: 311.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 13:06:17 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 13:06:18 +0530
+Started GET "/auth/facebook/callback?code=AQAwyj3YsqUDB4d-t7SXTc7kIxkZyn5gPNavt4Lxzceu5ZSrjlG0bAjzDzc8p-88lBWYAY3Csn17c4V_OHWPHSLosbkox6Vv5TfU6m0V4ekHOKu94rSmeSvP36WiGnxGK_zvAnTG2qbNwB82YwZ7W5Ru0LbGRMfsdHuicDiZEWWz0k2zRRNnnpUvNDjboCMR7Ccka0pMddMxc3RKvSn4V-sRGEaIUew3Qr9sm2WCzWOHWWesTN_s-eFDTKmGUj1BbYnJjVJG6vaMTeeXC5u3aw3lg8dIowgzcN5WBF-dbYNa4DHUu4XffcTe2FpXcvS9906-vlac7C1aBMwqbAYpxaB4Hntplw4KhPNSCUsWPimUJg&state=6b9475ee2e26bc98a6cfc14c5466f8da1595560150c5d716" for 127.0.0.1 at 2018-01-10 13:06:18 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQAwyj3YsqUDB4d-t7SXTc7kIxkZyn5gPNavt4Lxzceu5ZSrjlG0bAjzDzc8p-88lBWYAY3Csn17c4V_OHWPHSLosbkox6Vv5TfU6m0V4ekHOKu94rSmeSvP36WiGnxGK_zvAnTG2qbNwB82YwZ7W5Ru0LbGRMfsdHuicDiZEWWz0k2zRRNnnpUvNDjboCMR7Ccka0pMddMxc3RKvSn4V-sRGEaIUew3Qr9sm2WCzWOHWWesTN_s-eFDTKmGUj1BbYnJjVJG6vaMTeeXC5u3aw3lg8dIowgzcN5WBF-dbYNa4DHUu4XffcTe2FpXcvS9906-vlac7C1aBMwqbAYpxaB4Hntplw4KhPNSCUsWPimUJg", "state"=>"6b9475ee2e26bc98a6cfc14c5466f8da1595560150c5d716"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 849ms (Views: 73.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-10 13:06:39 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 71ms (Views: 68.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 13:06:42 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 13:06:42 +0530
+Started GET "/auth/facebook/callback?code=AQCcn0-7e-T39FjOv8hR2hnYveijDaKwmlHAfjQzgGht_cOW31BFTjEISTC4wydSsROMFYR6sFAjX1eJK7lf8XMiSHLwT1peUEIai7pRiUJoV7gJ5ym_xiarwRKS4YI5wQejdKweL7qNCE0bAUDoGzwVfvQ3uD2vJaYoip28pUjedHj-vBBgnNqj2yiXx-bu9LaqjMLARHVJDyV9XFNQXlA0-TPTEk6edFubeG_rBiK4bI1oR4Qs1xK2iK6GrOwMSIu6OEKG6pvR9U04HN-iEIoAWEwN9tzCcCKXKPq0Unhe6yCSSd3a8FY8E-4d_oAASuvOxXJNezH4TSoM6H3ZcdfrGpALwlvNlNSz3nU_vre-Kw&state=55c33b6f49364c8f6c6ea05e5fba5649f083a9b12531ff13" for 127.0.0.1 at 2018-01-10 13:06:43 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQCcn0-7e-T39FjOv8hR2hnYveijDaKwmlHAfjQzgGht_cOW31BFTjEISTC4wydSsROMFYR6sFAjX1eJK7lf8XMiSHLwT1peUEIai7pRiUJoV7gJ5ym_xiarwRKS4YI5wQejdKweL7qNCE0bAUDoGzwVfvQ3uD2vJaYoip28pUjedHj-vBBgnNqj2yiXx-bu9LaqjMLARHVJDyV9XFNQXlA0-TPTEk6edFubeG_rBiK4bI1oR4Qs1xK2iK6GrOwMSIu6OEKG6pvR9U04HN-iEIoAWEwN9tzCcCKXKPq0Unhe6yCSSd3a8FY8E-4d_oAASuvOxXJNezH4TSoM6H3ZcdfrGpALwlvNlNSz3nU_vre-Kw", "state"=>"55c33b6f49364c8f6c6ea05e5fba5649f083a9b12531ff13"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+Completed 200 OK in 626ms (Views: 86.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 13:06:57 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 13:06:57 +0530
+Started GET "/auth/facebook/callback?code=AQBkLS8bpVCU9BVMTYcbSpVCPhtH_Qpq93-1_Pc6Ze2kkvXa4lKYNeE-24wDoQHr1fAFRQAqDwQNU9RfcFxeyO_iwNpioZWaGTsHaiBX0XrDS9-UPJHC7F-OLX2X7w-56FsGgITeoPr-RZckycpTp58So1U8U7FWj0LXSIELw5JeDdOL6XICuXSjh6tVOcBAIQGwsRn6-JC4h_DuAz1dyD1z2g2JFGd4EYxzRs3DFE9hnyLmurPWltCxDDYeWf5wl1MUj1vNjgpuM9AVxOD7EYLDGPQF-nW4as05e79lQ2ZHrgzo1N_BgBGTqy2Yj24AQ76JXqWi6rdWXu9wC5XqMeCU7BzueIVBQBX7NcRgmOGxRQ&state=d02723e2b81403a4824ab174590a123219038f2c3df54221" for 127.0.0.1 at 2018-01-10 13:07:01 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQBkLS8bpVCU9BVMTYcbSpVCPhtH_Qpq93-1_Pc6Ze2kkvXa4lKYNeE-24wDoQHr1fAFRQAqDwQNU9RfcFxeyO_iwNpioZWaGTsHaiBX0XrDS9-UPJHC7F-OLX2X7w-56FsGgITeoPr-RZckycpTp58So1U8U7FWj0LXSIELw5JeDdOL6XICuXSjh6tVOcBAIQGwsRn6-JC4h_DuAz1dyD1z2g2JFGd4EYxzRs3DFE9hnyLmurPWltCxDDYeWf5wl1MUj1vNjgpuM9AVxOD7EYLDGPQF-nW4as05e79lQ2ZHrgzo1N_BgBGTqy2Yj24AQ76JXqWi6rdWXu9wC5XqMeCU7BzueIVBQBX7NcRgmOGxRQ", "state"=>"d02723e2b81403a4824ab174590a123219038f2c3df54221"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 1197ms (Views: 348.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook/callback?code=AQBkLS8bpVCU9BVMTYcbSpVCPhtH_Qpq93-1_Pc6Ze2kkvXa4lKYNeE-24wDoQHr1fAFRQAqDwQNU9RfcFxeyO_iwNpioZWaGTsHaiBX0XrDS9-UPJHC7F-OLX2X7w-56FsGgITeoPr-RZckycpTp58So1U8U7FWj0LXSIELw5JeDdOL6XICuXSjh6tVOcBAIQGwsRn6-JC4h_DuAz1dyD1z2g2JFGd4EYxzRs3DFE9hnyLmurPWltCxDDYeWf5wl1MUj1vNjgpuM9AVxOD7EYLDGPQF-nW4as05e79lQ2ZHrgzo1N_BgBGTqy2Yj24AQ76JXqWi6rdWXu9wC5XqMeCU7BzueIVBQBX7NcRgmOGxRQ&state=d02723e2b81403a4824ab174590a123219038f2c3df54221" for 127.0.0.1 at 2018-01-10 13:45:30 +0530
+  
+OmniAuth::Strategies::OAuth2::CallbackError (csrf_detected | CSRF detected):
+  
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:486:in `fail!'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:71:in `callback_phase'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/auth/facebook/callback?code=AQCU673rgMoLYDQMezgUlLC2g37g347ywLxyZTeqv7O3cOl9MaqFmKQWdQkInAT4HzTwbxYPGyEG1hZ0NccHEslMnq7jOG_DjnvcyXDu7OwMPHxCev5iZimtznjQOHlxNJmx6BeQ5qgrRa28jV39VBw_32oQkqChyA0e1I6pgRZhaXvNL8PGiXBEKY1safWMyexRuT4VVolvlnzu8YfudybuIZdD6w-Blg5oKji3Zmy77Cbyj5EZY7EcQCA7nnPErnA9oScRJxwYa9RmmKxXf_v-MXqPJHS0dWko79ZNg2s0MxXTIgPT9h1D2bIqiwPS61aiktJCKbihnahB0lXryD-tyJPQgpW2EkTrjZQsx6iFCg&state=d02723e2b81403a4824ab174590a123219038f2c3df54221" for 127.0.0.1 at 2018-01-10 13:45:32 +0530
+  
+OmniAuth::Strategies::OAuth2::CallbackError (csrf_detected | CSRF detected):
+  
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:486:in `fail!'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:71:in `callback_phase'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 13:45:35 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 13:45:36 +0530
+Started GET "/auth/facebook/callback?code=AQBYGebf0xUETs8IUbQ8VNbWBU0N6v19DsCX7r_vM_P39Wqnk42eZeUzjDRWa5kIxTs63r9g1DxhSPPatmAyrSlCRAHsVrJrssjuHB1QbeXP92WCvqR5WPBBkcXyuNXqsRnh3kD1M9kbhXDzWWs1yhdStWyUo7expDWw9foj2aA3kNgyc6xPmS_ffcteOHNC-ZEnj3ig4aD8TlmAwPcBgkfIHohpyATRM4rgZGsFIU8TDO3rtZk1KV39_eILNxGqFX9qBHWHzhtQ6jtFaaCrAe9a59kMfMHcFdyrcwMcVTbchqBdzvjhNvW9jGshKVCeWQa3SrtOO47tRP1X4g9x9duowUTznKGlLkJR4t_rdYo9kw&state=78b66d88916c4ae841c1f4cbff505d383df650db8a6a212b" for 127.0.0.1 at 2018-01-10 13:45:36 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQBYGebf0xUETs8IUbQ8VNbWBU0N6v19DsCX7r_vM_P39Wqnk42eZeUzjDRWa5kIxTs63r9g1DxhSPPatmAyrSlCRAHsVrJrssjuHB1QbeXP92WCvqR5WPBBkcXyuNXqsRnh3kD1M9kbhXDzWWs1yhdStWyUo7expDWw9foj2aA3kNgyc6xPmS_ffcteOHNC-ZEnj3ig4aD8TlmAwPcBgkfIHohpyATRM4rgZGsFIU8TDO3rtZk1KV39_eILNxGqFX9qBHWHzhtQ6jtFaaCrAe9a59kMfMHcFdyrcwMcVTbchqBdzvjhNvW9jGshKVCeWQa3SrtOO47tRP1X4g9x9duowUTznKGlLkJR4t_rdYo9kw", "state"=>"78b66d88916c4ae841c1f4cbff505d383df650db8a6a212b"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 705ms (Views: 64.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-10 14:19:28 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (24.6ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (7.2ms)
+Completed 200 OK in 111ms (Views: 108.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 14:19:30 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 14:19:30 +0530
+Started GET "/auth/facebook/callback?code=AQCnmUCsTjLpISuTxIKGwuqUlnaY0LQ5lPj5rcPE1UODF1x_brAy_gjqk2jKm8ANsAncJKyW_w8kL3mk7YiKMOJPwZGCWX1oalgwIEbwpGD2Wt5FQae_311DsLFJNlC4ib1416y032rWLgyOHufNyjRdItTkIA5hrNzo-I_EiaTE3BaT_BJGIIG7H_HtHwr3rbwRc5wwRSG1cZlLN97JqLNmfHDXM283yhH0gen_emq4LOYvLk7RZTqX5YOqteX9nHhygyGRMTR_3Pu5Ksjo5Of4WYYasaDo5w2IIYn_wSfAnfbE_1D2PHVHeF8cGg95lWsh7akFnb3Gg_n4onWtPcY-bw8M2SNXhZK3htsm_0uXqw&state=273dc8b36e1c3c1e347ddbcbf7ff611d1fb692d158e59960" for 127.0.0.1 at 2018-01-10 14:19:30 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQCnmUCsTjLpISuTxIKGwuqUlnaY0LQ5lPj5rcPE1UODF1x_brAy_gjqk2jKm8ANsAncJKyW_w8kL3mk7YiKMOJPwZGCWX1oalgwIEbwpGD2Wt5FQae_311DsLFJNlC4ib1416y032rWLgyOHufNyjRdItTkIA5hrNzo-I_EiaTE3BaT_BJGIIG7H_HtHwr3rbwRc5wwRSG1cZlLN97JqLNmfHDXM283yhH0gen_emq4LOYvLk7RZTqX5YOqteX9nHhygyGRMTR_3Pu5Ksjo5Of4WYYasaDo5w2IIYn_wSfAnfbE_1D2PHVHeF8cGg95lWsh7akFnb3Gg_n4onWtPcY-bw8M2SNXhZK3htsm_0uXqw", "state"=>"273dc8b36e1c3c1e347ddbcbf7ff611d1fb692d158e59960"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 604ms (Views: 77.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-10 14:19:58 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 74ms (Views: 71.9ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 14:20:00 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 14:20:00 +0530
+Started GET "/auth/facebook/callback?code=AQDWqfbzTUWDES7OOVywz4D85uQ0NlUNiA4YE9Z2Dwemigmt6LOSLRLSmYv2915c-2SHJsvjvdNM0kKUs5dJTKRQaVnohnZQXSxqgzmWhUK5YMa2IpP2Rw2eC973pELnmJE371aX3PQGyCNZVYpyDHeM5cfLq8Iq4O1H7tgor00vQroVzLFFL5odckZ8w0vxVkJrRWihxg5ZyXEMWy9px3zO5p8GxCgSWdLBcIo0ZwaCTQeRe40HMY_hYnFi26X_HxGpf0DLuTss36NnOgoefMCYb4WyOCkF0EOAxTJ5JUbQF30bd1mZ1JNfPXsXBtIgxoGYzDlPSL4r7vmisdgna1-7p8i5jYu_gQoiZUgRngiwIg&state=629a4f5f6f6370a1784a2ae31dd32a3f49bcfc9b3ad3bbf3" for 127.0.0.1 at 2018-01-10 14:20:00 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQDWqfbzTUWDES7OOVywz4D85uQ0NlUNiA4YE9Z2Dwemigmt6LOSLRLSmYv2915c-2SHJsvjvdNM0kKUs5dJTKRQaVnohnZQXSxqgzmWhUK5YMa2IpP2Rw2eC973pELnmJE371aX3PQGyCNZVYpyDHeM5cfLq8Iq4O1H7tgor00vQroVzLFFL5odckZ8w0vxVkJrRWihxg5ZyXEMWy9px3zO5p8GxCgSWdLBcIo0ZwaCTQeRe40HMY_hYnFi26X_HxGpf0DLuTss36NnOgoefMCYb4WyOCkF0EOAxTJ5JUbQF30bd1mZ1JNfPXsXBtIgxoGYzDlPSL4r7vmisdgna1-7p8i5jYu_gQoiZUgRngiwIg", "state"=>"629a4f5f6f6370a1784a2ae31dd32a3f49bcfc9b3ad3bbf3"}
+Completed 500 Internal Server Error in 845ms
+
+
+  
+Koala::Facebook::ClientError (type: OAuthException, code: 100, message: (#100) Tried accessing nonexisting field (user_about_me) on node type (User), x-fb-trace-id: Fph4RKzCsx4 [HTTP 400]):
+  
+app/models/employee.rb:32:in `koala'
+app/controllers/employees_controller.rb:32:in `login'
+Started GET "/" for 127.0.0.1 at 2018-01-10 14:20:54 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (3.1ms)
+Completed 200 OK in 89ms (Views: 87.1ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 14:20:56 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 14:20:56 +0530
+Started GET "/auth/facebook/callback?code=AQAho2uirarh-v-kEouZvtAkGS0urOlWlAZqe9CEIQZT2jWeWKgHULjQS8wkoQFZoEhtX8s1TGRafskQXy1_qf-FJKsu0USyWJrXBbqBFvR8WFEx8m4GNtCg8fp_YMGfYAT8S78vNbjGl20Juh6YGl-BNHiD-ZaLzXrHz5SA_Yi0co0Xa2JiyQ91CnzIx99OqdItwL9qNTl7yES_HpDJzw7Z63JzXaq9o8p5XluIeXfI3gEvzHnyU5dTIgF6HsX0I7eZNmnGR4PdN4b8zPvW_5bqIxmR68KPjRynhU7SeU2pqMr50TvK8NxH06U0m05Bc9M2JDX0MN224CnYxhJ4mOT6jXO-iiysWFJgzE3PkSZvQw&state=135532a22fd5d20a4a5635b2c0f22c3a657ab7f9d3204e35" for 127.0.0.1 at 2018-01-10 14:20:57 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQAho2uirarh-v-kEouZvtAkGS0urOlWlAZqe9CEIQZT2jWeWKgHULjQS8wkoQFZoEhtX8s1TGRafskQXy1_qf-FJKsu0USyWJrXBbqBFvR8WFEx8m4GNtCg8fp_YMGfYAT8S78vNbjGl20Juh6YGl-BNHiD-ZaLzXrHz5SA_Yi0co0Xa2JiyQ91CnzIx99OqdItwL9qNTl7yES_HpDJzw7Z63JzXaq9o8p5XluIeXfI3gEvzHnyU5dTIgF6HsX0I7eZNmnGR4PdN4b8zPvW_5bqIxmR68KPjRynhU7SeU2pqMr50TvK8NxH06U0m05Bc9M2JDX0MN224CnYxhJ4mOT6jXO-iiysWFJgzE3PkSZvQw", "state"=>"135532a22fd5d20a4a5635b2c0f22c3a657ab7f9d3204e35"}
+Completed 500 Internal Server Error in 494ms
+
+
+  
+Koala::Facebook::ClientError (type: OAuthException, code: 100, message: (#100) Tried accessing nonexisting field (user_about_me) on node type (User), x-fb-trace-id: GYLXs08MGDi [HTTP 400]):
+  
+app/models/employee.rb:32:in `koala'
+app/controllers/employees_controller.rb:32:in `login'
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 14:21:24 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 14:21:25 +0530
+Started GET "/auth/facebook/callback?code=AQAfUKvz0wq-teuyCwlYhDsZh9BLRGhAYQMCOM9O-0aerIgK3hhEvoXLDiL_YSf217j2ykOlUTuOmxjMqqQlVW7YE5QQNZp_h4ZN6Kt5KvwwFgplzegMO8WMz5OOQWFcrgPjK89in9Si4_k9BJ1NFT3Lce6xbE_1Ow86qVQAppwIHh70-JxGBbbqMjRHzEa35Je6-phW7vb4vNhLj3P2dRZcXv4KbTJS1r3hWLMwFoJA6LaEWlP6Lel5lLGmY76QcHMJYkXlGYJWuModHJ5JlBmRauX5oY74kah5WMQhqgKC87hsALvzxSGQbr_cOH1hn40Z0GtQoIP0-vel8ncU7AlMfxXfzV04BDM67-YYAb-mWg&state=49b17abe3c92d87fc18326aab5e870ef85512bc905ee2a6e" for 127.0.0.1 at 2018-01-10 14:21:25 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQAfUKvz0wq-teuyCwlYhDsZh9BLRGhAYQMCOM9O-0aerIgK3hhEvoXLDiL_YSf217j2ykOlUTuOmxjMqqQlVW7YE5QQNZp_h4ZN6Kt5KvwwFgplzegMO8WMz5OOQWFcrgPjK89in9Si4_k9BJ1NFT3Lce6xbE_1Ow86qVQAppwIHh70-JxGBbbqMjRHzEa35Je6-phW7vb4vNhLj3P2dRZcXv4KbTJS1r3hWLMwFoJA6LaEWlP6Lel5lLGmY76QcHMJYkXlGYJWuModHJ5JlBmRauX5oY74kah5WMQhqgKC87hsALvzxSGQbr_cOH1hn40Z0GtQoIP0-vel8ncU7AlMfxXfzV04BDM67-YYAb-mWg", "state"=>"49b17abe3c92d87fc18326aab5e870ef85512bc905ee2a6e"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 692ms (Views: 64.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-10 14:51:37 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 82ms (Views: 80.7ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 14:51:40 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 14:51:41 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 14:54:04 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 14:54:05 +0530
+Started GET "/auth/facebook/callback?code=AQDWoc81ZKsKixrIYgd-_NUBsKj-3YUHi4e6QVJhzjWgG8i7Y7T7Eqpzw736KBmstPeO529-orKlT7CopFdeJxUS7Ncz-a89nt3QaSVuIlG7uefephUwfTTQCgvmCihc2a4qYFh85ew8c6_CnyZHuOBx9etUVZy2Nnh_V4T8MvR2HLHrwIyzak3wi4QQyRFCujO3K7N-6ql0uRwSndT_7Hr6yG-wCixGPxrsBTuBdsee_ooXEudAtjlW_zAwbW9G90Qv7XNL4hxYaPlnh85Z31LVwxxiXThix4AJzEl_BH4Ve_eD4HzwPdIubtPBvQ8Sq2F1YMThLfsH9SWetc-XK9fMQ5xxCRbNazMzR0eY88mMng&state=c8bdec94490c123fea99755050559449f482bb6e90b1e7fd" for 127.0.0.1 at 2018-01-10 14:54:11 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQDWoc81ZKsKixrIYgd-_NUBsKj-3YUHi4e6QVJhzjWgG8i7Y7T7Eqpzw736KBmstPeO529-orKlT7CopFdeJxUS7Ncz-a89nt3QaSVuIlG7uefephUwfTTQCgvmCihc2a4qYFh85ew8c6_CnyZHuOBx9etUVZy2Nnh_V4T8MvR2HLHrwIyzak3wi4QQyRFCujO3K7N-6ql0uRwSndT_7Hr6yG-wCixGPxrsBTuBdsee_ooXEudAtjlW_zAwbW9G90Qv7XNL4hxYaPlnh85Z31LVwxxiXThix4AJzEl_BH4Ve_eD4HzwPdIubtPBvQ8Sq2F1YMThLfsH9SWetc-XK9fMQ5xxCRbNazMzR0eY88mMng", "state"=>"c8bdec94490c123fea99755050559449f482bb6e90b1e7fd"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 611ms (Views: 76.5ms)
+
+
+Started GET "/auth/facebook/callback?code=AQDzcjpkyIEIBbNuy0-j3z_cGS7_khlCHVSb-TkOdROD3MuqUQAnUan1JTje1Pp4MXLrLMcLm86TW-b-8hZX8r5JzUhnG4ofXfI0H14qIe7DycCe41tamjmQAUMFGh2ae-6bCfmeaOZ6jZgw1gE75tR1msi_zV6ETyS2fHc_ksGnROntGqiGHjP09pDoLhcDkUl3CtQ8mYGs-spj4GoT10iD5lk8RkqEPNY0_wQnjner15ddUM--cvbihHXPfoPqBSAHRIqhN2jm9ib100ilyTw0pGjc4WsO8URZzNI50Bv94O3ZWKMMGg4iEwXjH9OiYpGbSL7dl7rptbfnKuFOgTFywsPPwczdQN5r0xvjbajSmg&state=c8bdec94490c123fea99755050559449f482bb6e90b1e7fd" for 127.0.0.1 at 2018-01-10 14:54:20 +0530
+  
+OmniAuth::Strategies::OAuth2::CallbackError (csrf_detected | CSRF detected):
+  
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:486:in `fail!'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:71:in `callback_phase'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+omniauth-facebook (4.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-01-10 15:42:28 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 71ms (Views: 68.7ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 15:42:30 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 15:42:30 +0530
+Started GET "/auth/facebook/callback?code=AQCOy90WYVxvqcAPQt5IWmKudJZUFYJf0W1Gz4kI9ex2frXjZVgyZnnTK3w1GNzvSJssQbRae9S3vAKboTaAvEF2HmU5LarxMq8R7PKzQmKhXvIZSuwFcUX3kNeqcuUVr7DOR6MYpnLD29w-hTakdkYCl-_pZj_PjGjuWW22e5wVrErGWfytBXpF6ooSVSSJYaz85Z-XkEb0jU4uJU8yBQcYh_yhmItRhn8eYvX3mKqLEcyu2aI8HRrmjcNWGibA2AP6ljiaHvuvoHkJ5LuwMn8LJtRnEOcF2dceoHpEPnElrXfx_2LWAQe_HdSXfW9ioCoX9HGVHSa8LhEUrBPe2QTVt-_loBb-_HFqx9un-_lnbA&state=9513c7f75ec452d37b154b0930a954ddf39d46a3c6007ff3" for 127.0.0.1 at 2018-01-10 15:42:31 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQCOy90WYVxvqcAPQt5IWmKudJZUFYJf0W1Gz4kI9ex2frXjZVgyZnnTK3w1GNzvSJssQbRae9S3vAKboTaAvEF2HmU5LarxMq8R7PKzQmKhXvIZSuwFcUX3kNeqcuUVr7DOR6MYpnLD29w-hTakdkYCl-_pZj_PjGjuWW22e5wVrErGWfytBXpF6ooSVSSJYaz85Z-XkEb0jU4uJU8yBQcYh_yhmItRhn8eYvX3mKqLEcyu2aI8HRrmjcNWGibA2AP6ljiaHvuvoHkJ5LuwMn8LJtRnEOcF2dceoHpEPnElrXfx_2LWAQe_HdSXfW9ioCoX9HGVHSa8LhEUrBPe2QTVt-_loBb-_HFqx9un-_lnbA", "state"=>"9513c7f75ec452d37b154b0930a954ddf39d46a3c6007ff3"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 598ms (Views: 71.9ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 15:43:54 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 15:43:55 +0530
+Started GET "/auth/facebook/callback?code=AQBbBYKGE_dKZkA1bib2NfOqpSvwYxhXhgPylIFO38stDhge6gjWP8Y4szP_4oLulneE_yG-VOKvlRrNmQMscHO-8TPLPf6kADG0Zc6lGPOeG8DrXkD9sjX56YRGSfrb2CErcTVWuQYlDQveUvzPwiDDepm0iFBuCPRlD9C7fVluBCgLlme0JekC8SuE1Ez2MY8zmrIB_ez7hlgGqDphrnDEx-zRmLsWYeP-6xPyUPNNMU74FG7EMQ7SBlzZaojTRsoeigIOlxff7lF2qTXA3ELvgTfTgbmedsS4PG1yYBHGRBDlHQG-JR5iOYZR0vOcRQCnWv_0u7nweKI2RZRhjUQEd2s_kl_kUZlWR_obtA0wGw&state=d9529b9376b802717d7a43907b9c95a100247b6f64c3a32a" for 127.0.0.1 at 2018-01-10 15:43:55 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQBbBYKGE_dKZkA1bib2NfOqpSvwYxhXhgPylIFO38stDhge6gjWP8Y4szP_4oLulneE_yG-VOKvlRrNmQMscHO-8TPLPf6kADG0Zc6lGPOeG8DrXkD9sjX56YRGSfrb2CErcTVWuQYlDQveUvzPwiDDepm0iFBuCPRlD9C7fVluBCgLlme0JekC8SuE1Ez2MY8zmrIB_ez7hlgGqDphrnDEx-zRmLsWYeP-6xPyUPNNMU74FG7EMQ7SBlzZaojTRsoeigIOlxff7lF2qTXA3ELvgTfTgbmedsS4PG1yYBHGRBDlHQG-JR5iOYZR0vOcRQCnWv_0u7nweKI2RZRhjUQEd2s_kl_kUZlWR_obtA0wGw", "state"=>"d9529b9376b802717d7a43907b9c95a100247b6f64c3a32a"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 595ms (Views: 68.1ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 16:08:31 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 16:08:32 +0530
+Started GET "/auth/facebook/callback?code=AQDMP29j93LCevkTZGv32aZl7814Ma8QCePzYVDyMWix2e2DqTXdlTnpaBimRAQhpZe6uq5y8A4Yo6bq1aRLMinCok6wZ7roAGX7CcTG2bmtbn-yceKu20GyWSmXnmVkYjnXt95sx_a_p7XCS98_xIEXOgeF_9FWn3rXrQfB2NfWV93p8n-aDteOqMmURONQS_fEyXB2Hzd0nRNI0KhOMUB-eiDx1NO81WF4BeWru6YAZT0XP960uM9MYE1vl280rtR2NtbT6w7ZJOHevCrzoTmBEX2dx9l-xO6duGvzuTCftlcUO7Y42m0UYXZ5593INISXVzOYqAIOEc4-C4IN2VuDK7uZ28heWd1U2WN0ey4Tig&state=a1195b4c625edcecc32b585ea86f88466a2250e7957a0c47" for 127.0.0.1 at 2018-01-10 16:08:32 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQDMP29j93LCevkTZGv32aZl7814Ma8QCePzYVDyMWix2e2DqTXdlTnpaBimRAQhpZe6uq5y8A4Yo6bq1aRLMinCok6wZ7roAGX7CcTG2bmtbn-yceKu20GyWSmXnmVkYjnXt95sx_a_p7XCS98_xIEXOgeF_9FWn3rXrQfB2NfWV93p8n-aDteOqMmURONQS_fEyXB2Hzd0nRNI0KhOMUB-eiDx1NO81WF4BeWru6YAZT0XP960uM9MYE1vl280rtR2NtbT6w7ZJOHevCrzoTmBEX2dx9l-xO6duGvzuTCftlcUO7Y42m0UYXZ5593INISXVzOYqAIOEc4-C4IN2VuDK7uZ28heWd1U2WN0ey4Tig", "state"=>"a1195b4c625edcecc32b585ea86f88466a2250e7957a0c47"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 2390ms (Views: 1742.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 16:09:29 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 16:09:30 +0530
+Started GET "/auth/facebook/callback?code=AQDYJAFhx2_vnuHKenAxw7h14oHmSHiYSYY7-c6oJpx9FwJ9ksyTuRHJ134PzK7vcgK8LydQKasgYQTTaQg1lF1tbNXofKJBjPk0PuvYHrLQoYzIZ-8CKBY4_TVk5Egrus4McdZ5KU9NJ9iRuXzPT3vkrDT3N7c8Kc8h8qtBHzoO9ENGMPOKIcJOi9UbSNHgfpy86KbTFwrkDuQDr8eLfwT_7Nide9eWB0v92nH2Md40_SS1IJZnO4W8QfjioPdMfwC-fWlaogdFODyISa89ngD1V8sRKRGJw1G6m5xuiLDogFXZQMD5J5My40v32Q8Z1gfeUL7lbV9a9d6_qsjszmUo0BvOhwdhb64qoDxngWJVIA&state=98fe3f8201a48a7e538cf20aa984ed9823c6f367a58c6e14" for 127.0.0.1 at 2018-01-10 16:09:30 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQDYJAFhx2_vnuHKenAxw7h14oHmSHiYSYY7-c6oJpx9FwJ9ksyTuRHJ134PzK7vcgK8LydQKasgYQTTaQg1lF1tbNXofKJBjPk0PuvYHrLQoYzIZ-8CKBY4_TVk5Egrus4McdZ5KU9NJ9iRuXzPT3vkrDT3N7c8Kc8h8qtBHzoO9ENGMPOKIcJOi9UbSNHgfpy86KbTFwrkDuQDr8eLfwT_7Nide9eWB0v92nH2Md40_SS1IJZnO4W8QfjioPdMfwC-fWlaogdFODyISa89ngD1V8sRKRGJw1G6m5xuiLDogFXZQMD5J5My40v32Q8Z1gfeUL7lbV9a9d6_qsjszmUo0BvOhwdhb64qoDxngWJVIA", "state"=>"98fe3f8201a48a7e538cf20aa984ed9823c6f367a58c6e14"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 699ms (Views: 60.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-10 16:10:14 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (191.3ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (7.6ms)
+Completed 200 OK in 250ms (Views: 248.8ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 16:10:17 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 16:10:17 +0530
+Started GET "/auth/facebook/callback?code=AQDwLCHvnCiVmFPVXg2xffhkiPRwZwrOyiwGbbADyA_vqYDQxErv1TTR9fBE7J6P7s8U3tBlXSWti_tzoqlxoklwM53Zox-NKjW31XMMsXOd8yH-Nmfqk3bgXNaGFIaM-I6m0JbG2-1by4wtr1wAhQ0TyakKqC6GOSvNyFerjGFrz_OBEk6Bht_C0AfW0oKOritPFzwqOK6v0VQrDcRyxX737WqVgohlG5MIJE54P08wTq7TpTbGpiSfLUItkMOJSpuf18fKOaXNzpO9Awd-hHUeBljiDnY_2ugED529iIruaBUl-34__mWblaBy4RkV-X1PEdg4iPfv3Cn0b4JD1Rm6HVlksq50_4BOmjKqGED3lQ&state=bfe899504b5b92b88ef16f71837c3360d963bf6372fa1590" for 127.0.0.1 at 2018-01-10 16:10:18 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQDwLCHvnCiVmFPVXg2xffhkiPRwZwrOyiwGbbADyA_vqYDQxErv1TTR9fBE7J6P7s8U3tBlXSWti_tzoqlxoklwM53Zox-NKjW31XMMsXOd8yH-Nmfqk3bgXNaGFIaM-I6m0JbG2-1by4wtr1wAhQ0TyakKqC6GOSvNyFerjGFrz_OBEk6Bht_C0AfW0oKOritPFzwqOK6v0VQrDcRyxX737WqVgohlG5MIJE54P08wTq7TpTbGpiSfLUItkMOJSpuf18fKOaXNzpO9Awd-hHUeBljiDnY_2ugED529iIruaBUl-34__mWblaBy4RkV-X1PEdg4iPfv3Cn0b4JD1Rm6HVlksq50_4BOmjKqGED3lQ", "state"=>"bfe899504b5b92b88ef16f71837c3360d963bf6372fa1590"}
+Completed 500 Internal Server Error in 534ms
+
+
+  
+Koala::Facebook::ClientError (type: OAuthException, code: 100, message: (#100) Tried accessing nonexisting field (user_about_me) on node type (User), x-fb-trace-id: F5m0T+GCHB3 [HTTP 400]):
+  
+app/models/employee.rb:32:in `koala'
+app/controllers/employees_controller.rb:32:in `login'
+Started GET "/" for 127.0.0.1 at 2018-01-10 16:10:48 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 60ms (Views: 58.7ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 16:10:51 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 16:10:51 +0530
+Started GET "/auth/facebook/callback?code=AQBoVgg-L8QYJ8ayWzoGKApdidAYQeZNIgWaWXk4ufL1TYf55XnZw2iOWYki-bQLYcFSVYDep7eIvUoTmtGDJ_Lr6yP-7SgrdCwE4L7Eks--bPlUadB79I-J3973yQmG5n7kXT11HHzWwvznWDdNnYxc9rg6BnHZv-y7Ivo1VoYf4AJjH21lEmPRXas-TurGX-EczPXPgDPB1MYzTxX1D2vKhW5NMFINxew8qiGJ273dSA8Bqx-n1xPvoJwX0FsUMiEXcGQRakd8VnpXflAr1q2RzsWwDXKu4Jq7fuYubynOAJBYt31G4BajHQiQ_xIEofTtLf6mHELqbhqghs535kXkn--AYJCWSHKzhCLv7dLR3Q&state=4265cdd0e8a714f240eeefd4739140ff0d4d24a74136f6bf" for 127.0.0.1 at 2018-01-10 16:10:51 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQBoVgg-L8QYJ8ayWzoGKApdidAYQeZNIgWaWXk4ufL1TYf55XnZw2iOWYki-bQLYcFSVYDep7eIvUoTmtGDJ_Lr6yP-7SgrdCwE4L7Eks--bPlUadB79I-J3973yQmG5n7kXT11HHzWwvznWDdNnYxc9rg6BnHZv-y7Ivo1VoYf4AJjH21lEmPRXas-TurGX-EczPXPgDPB1MYzTxX1D2vKhW5NMFINxew8qiGJ273dSA8Bqx-n1xPvoJwX0FsUMiEXcGQRakd8VnpXflAr1q2RzsWwDXKu4Jq7fuYubynOAJBYt31G4BajHQiQ_xIEofTtLf6mHELqbhqghs535kXkn--AYJCWSHKzhCLv7dLR3Q", "state"=>"4265cdd0e8a714f240eeefd4739140ff0d4d24a74136f6bf"}
+Completed 500 Internal Server Error in 536ms
+
+
+  
+Koala::Facebook::ClientError (type: OAuthException, code: 100, message: (#100) Tried accessing nonexisting field (user_about_me) on node type (User), x-fb-trace-id: Bup+7Xb1i/j [HTTP 400]):
+  
+app/models/employee.rb:32:in `koala'
+app/controllers/employees_controller.rb:32:in `login'
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 16:11:03 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 16:11:04 +0530
+Started GET "/auth/facebook/callback?code=AQCQ4uPQfHD4QW1mOl9CLe9ICkkJU_GaB3OQA6CdHGYKwMXYB6EWmFL07vd7VzvSluR8_bg54b51btlgvFwlPgHcPVATY7AAY38JHakmlAVhAA3bS-X2IMnXSM7HR7m3qYxxJeWfP7DF10L5wVQMXtZTSn5EsZ-Ody-I0e7tgRRFw4sISLI808vWarqo0sPbK7OhdEnDvNvP_IR4uZLIyKBIuh_zzgWo6So9XGIgAbeTBvExEVbfLpDqBHfP0sZOgeMOGGWQqGIzEGXP0aQM5z65RFapfR-JP-kZh8dj2bhneITucjIC8P25sfb_DvCe2wgU3EBd57Q0xZgI4vByABmCD7fn0i5JjX8_d2SpSRwweg&state=3cff6afcc93fd228867169e2dd5a35661b1abafc7a42ba11" for 127.0.0.1 at 2018-01-10 16:11:04 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQCQ4uPQfHD4QW1mOl9CLe9ICkkJU_GaB3OQA6CdHGYKwMXYB6EWmFL07vd7VzvSluR8_bg54b51btlgvFwlPgHcPVATY7AAY38JHakmlAVhAA3bS-X2IMnXSM7HR7m3qYxxJeWfP7DF10L5wVQMXtZTSn5EsZ-Ody-I0e7tgRRFw4sISLI808vWarqo0sPbK7OhdEnDvNvP_IR4uZLIyKBIuh_zzgWo6So9XGIgAbeTBvExEVbfLpDqBHfP0sZOgeMOGGWQqGIzEGXP0aQM5z65RFapfR-JP-kZh8dj2bhneITucjIC8P25sfb_DvCe2wgU3EBd57Q0xZgI4vByABmCD7fn0i5JjX8_d2SpSRwweg", "state"=>"3cff6afcc93fd228867169e2dd5a35661b1abafc7a42ba11"}
+Completed 500 Internal Server Error in 779ms
+
+
+  
+Koala::Facebook::ClientError (type: OAuthException, code: 100, message: (#100) Tried accessing nonexisting field (user_about_me) on node type (User), x-fb-trace-id: Eb8C5g3qlN8 [HTTP 400]):
+  
+app/models/employee.rb:32:in `koala'
+app/controllers/employees_controller.rb:32:in `login'
+Started GET "/" for 127.0.0.1 at 2018-01-10 16:11:29 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (26.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (7.8ms)
+Completed 200 OK in 365ms (Views: 352.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 16:12:47 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 16:12:47 +0530
+Started GET "/auth/facebook/callback?code=AQCvT2PXGPBWmGWlNbcNZeuEs8Sz4_Q5nzeFrtBec45k9dEVsEURAg22JQxVt-cWg6mQxkAGEeHkyNbIA3OMrH9c8i7In92Ql13VpF52Q3xMqOe0zI6LI8b7EOYlDT_RhEd4LbrQC9evupe2ln4fFyG5Q-BND_i6zt9SE6uNu9Oe5skXAKqfKPiARpnydn6gQIu8J-gURFMWFx_s4n0x1_F2G0ghogdfYIVizOMmRPB3QoEBLiVivJydRmFjKXPwuQ_6PLWi-ZRW4MaeqCMaJ_b1v_t73Bg7KNTASdjnGh91YYaceKX8ZDM9whWqZ1oTPIEn1sU_uVSP0Xjy8ZCGQnR33w5JZLfyiNPWv5a3CZcVtw&state=d252c2fd065b1e3294a5c501b2cbb0269c973cd1a1722205" for 127.0.0.1 at 2018-01-10 16:12:48 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQCvT2PXGPBWmGWlNbcNZeuEs8Sz4_Q5nzeFrtBec45k9dEVsEURAg22JQxVt-cWg6mQxkAGEeHkyNbIA3OMrH9c8i7In92Ql13VpF52Q3xMqOe0zI6LI8b7EOYlDT_RhEd4LbrQC9evupe2ln4fFyG5Q-BND_i6zt9SE6uNu9Oe5skXAKqfKPiARpnydn6gQIu8J-gURFMWFx_s4n0x1_F2G0ghogdfYIVizOMmRPB3QoEBLiVivJydRmFjKXPwuQ_6PLWi-ZRW4MaeqCMaJ_b1v_t73Bg7KNTASdjnGh91YYaceKX8ZDM9whWqZ1oTPIEn1sU_uVSP0Xjy8ZCGQnR33w5JZLfyiNPWv5a3CZcVtw", "state"=>"d252c2fd065b1e3294a5c501b2cbb0269c973cd1a1722205"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 953ms (Views: 402.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 16:13:20 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-10 16:13:20 +0530
+Started GET "/auth/facebook/callback?code=AQDGHPgVzzCrWJw03cet9c1ZmkOu1mjcw40zYa4Ly1bUkAeORx3APqgLVTIz2IDITH-tj8H63ckA9T37leIEVN7ve4zNKrB-mmPIqoEG87MEgtfYL-UfMUV-yNPs8AbsE8s_o5yPkx_OmQa6CnzY0ZIWWI1_2uZs1Ad6wfeBI5Y660P0o-9fxcnA8stZzSMKHN3WXQDKVZOxC4w-S1fMI9Lr9pGi_VAL7cQaOYTlW0DYsAn2sOqWF_hKrCqd8WrA1jLJhhdtSA8avVT0JLIBm-DUTaAD2DsrlrJOOc1dVm2hmnaxK6NcH_JMBC2gtcnoZC1PRYjOmqECuyXRcIltHXcLqj242yfJf5jnsl99J_zU6w&state=1f433ec2188f6a6d6aa071b6c3a4bbd518574f27cfdf96fd" for 127.0.0.1 at 2018-01-10 16:13:21 +0530
+Processing by EmployeesController#login as HTML
+  Parameters: {"code"=>"AQDGHPgVzzCrWJw03cet9c1ZmkOu1mjcw40zYa4Ly1bUkAeORx3APqgLVTIz2IDITH-tj8H63ckA9T37leIEVN7ve4zNKrB-mmPIqoEG87MEgtfYL-UfMUV-yNPs8AbsE8s_o5yPkx_OmQa6CnzY0ZIWWI1_2uZs1Ad6wfeBI5Y660P0o-9fxcnA8stZzSMKHN3WXQDKVZOxC4w-S1fMI9Lr9pGi_VAL7cQaOYTlW0DYsAn2sOqWF_hKrCqd8WrA1jLJhhdtSA8avVT0JLIBm-DUTaAD2DsrlrJOOc1dVm2hmnaxK6NcH_JMBC2gtcnoZC1PRYjOmqECuyXRcIltHXcLqj242yfJf5jnsl99J_zU6w", "state"=>"1f433ec2188f6a6d6aa071b6c3a4bbd518574f27cfdf96fd"}
+  Rendering employees/login.html.erb within layouts/application
+  Rendered employees/login.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 618ms (Views: 68.6ms | ActiveRecord: 0.0ms)
+
+

@@ -26,6 +26,13 @@ class Employee < ApplicationRecord
         SecureRandom.urlsafe_base64
     end
 
+    def self.koala(auth)
+        access_token = auth['token']
+        facebook = Koala::Facebook::API.new(access_token)
+        facebook.get_object("me?fields=id,name,address,birthday,email,picture,about")
+    end
+    
+
     # Remembers a user in the database for use in persistent sessions.
     def remember
         self.remember_token = Employee.new_token

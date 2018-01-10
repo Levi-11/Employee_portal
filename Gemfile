@@ -44,6 +44,9 @@ gem 'nokogiri',                '1.8.1'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
 
+gem 'omniauth-facebook'
+gem 'koala', '~> 2.4'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

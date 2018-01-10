@@ -28,6 +28,11 @@ class EmployeesController < ApplicationController
     redirect_to adminemployee_path
   end
 
+  def login
+    @employee = Employee.koala(request.env['omniauth.auth']['credentials'])
+  end
+
+
   private
 
   def employee_params
