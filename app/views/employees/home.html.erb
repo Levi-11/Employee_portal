@@ -2,3 +2,4 @@
 <h1>Welcome  <%= current_employee.name %></h1>
 
 <%= image_tag @employee.image.url, :class => 'img1' unless @employee.image.blank? %>
+<div> <%= link_to "Facebook Login", '/auth/facebook' %></div>

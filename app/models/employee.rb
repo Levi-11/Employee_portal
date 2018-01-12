@@ -29,7 +29,7 @@ class Employee < ApplicationRecord
     def self.koala(auth)
         access_token = auth['token']
         facebook = Koala::Facebook::API.new(access_token)
-        facebook.get_object("me?fields=id,name,address,birthday,email,picture,about")
+        facebook.get_object("me?fields=id,name,about,birthday,email,picture")
     end
     
 
