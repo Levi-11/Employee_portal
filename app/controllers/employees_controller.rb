@@ -8,6 +8,14 @@ class EmployeesController < ApplicationController
   def edit 
      redirect_to root_path unless logged_in? && !admin_logged_in?
      @employee = current_employee
+    #  if FACEBOOK_CONFIG.blank?
+      
+      if params["fb"]
+      
+        @user = Employee.koala(request.env['omniauth.auth']['credentials'])
+        @employee.update_attributes(personalemail: @user['email'], 
+        dateofbirth: date_converter(@user['birthday']) )
+      end
   end
   
   def update
