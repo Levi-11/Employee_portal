@@ -3,6 +3,13 @@ require 'test_helper'
 class EmployeesEditTest < ActionDispatch::IntegrationTest
   def setup
     @employee = employees(:example)
+    OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new({
+      :provider => 'facebook',
+      :uid => '123545',
+      :personalemail => 'lvaguez@gmail.com',
+      :dateofbirth => '17/04/1993'
+      # etc.
+    })
   end
 
   test "unsuccessful edit" do    
@@ -11,6 +18,9 @@ class EmployeesEditTest < ActionDispatch::IntegrationTest
                                           password: 'password' } }
     get edit_employee_path(@employee)
     assert_template 'employees/edit'
+    assert_select 'a[href=?]', auth_provider_path
+    get auth_provider_path
+    assert_redirected_to auth_facebook_callback_path
     patch employee_path(@employee), params: { employee: { 
                                               email: "foo@invalid",
                                               designation:"foo",
@@ -28,6 +38,9 @@ class EmployeesEditTest < ActionDispatch::IntegrationTest
                                           password: 'password' } }
     get edit_employee_path(@employee)
     assert_template 'employees/edit'
+    assert_select 'a[href=?]', auth_provider_path
+    get auth_provider_path
+    assert_redirected_to auth_facebook_callback_path
     email = "foo@bar.com"
     designation="developer",
     dateofjoin="12/11/2017",

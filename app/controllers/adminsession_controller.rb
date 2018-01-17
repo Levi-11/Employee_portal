@@ -10,7 +10,7 @@ class AdminsessionController < ApplicationController
         log_in employee
         redirect_to adminhome_path
       else
-        flash.now[:danger]="Invalid User"
+        flash.now[:danger] = "Invalid User"
         render 'new'
       end
     else

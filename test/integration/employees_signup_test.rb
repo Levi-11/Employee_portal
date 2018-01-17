@@ -21,7 +21,7 @@ class EmployeesSignupTest < ActionDispatch::IntegrationTest
                                          password:"foo",
                                          password_confirmation:"bar" } }
     end
-    assert_redirected_to addemployee_path
+    assert_template 'admin/addemployee'
   end
 
   test "valid signup information" do

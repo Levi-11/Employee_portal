@@ -1,30 +1,39 @@
 class AdminController < ApplicationController
+
+  before_action :admin_logged_in, only: [:home, 
+                                         :index, 
+                                         :addemployee, 
+                                         :show, 
+                                         :projects,
+                                         :edit,
+                                         :update,
+                                         :new]
   def new
-    redirect_to root_path unless logged_in? && admin_logged_in?
+    
   end
  
   def home
-    redirect_to root_path unless logged_in? && admin_logged_in?
+    
   end
 
   def index
     #@employee=Employee.all
-    redirect_to root_path unless logged_in? && admin_logged_in?
+    
     @employee = Employee.order("created_at DESC").paginate(page: params[:page], :per_page => 2)
   end
 
   def projects
-    redirect_to root_path unless logged_in? && admin_logged_in?
+    
   end
 
   def show
-     redirect_to root_path unless logged_in? && admin_logged_in?
+     
     @employee = Employee.find(params[:id])
   end 
 
   def addemployee
-    redirect_to root_path unless logged_in? && admin_logged_in?
-    @employee=Employee.new
+    
+    @employee = Employee.new
   end
 
   def create
@@ -39,7 +48,7 @@ class AdminController < ApplicationController
   end
 
   def edit  
-    redirect_to root_path unless logged_in? && admin_logged_in?  
+      
     @employee = Employee.find(params[:id])
   end
 

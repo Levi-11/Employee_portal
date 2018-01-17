@@ -1,6 +1,7 @@
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 ENV['RAILS_ENV'] ||= 'test'
+OmniAuth.config.test_mode = true
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
@@ -20,6 +21,8 @@ class ActiveSupport::TestCase
   def is_admin_logged_in?(admin)
     !!admin.admin
   end
+
+  
 end
 
 class ActionDispatch::IntegrationTest

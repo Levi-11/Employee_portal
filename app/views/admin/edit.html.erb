@@ -1,33 +1,33 @@
 <% provide(:user, 'admin') %>
 <% if logged_in? %>
 <h1>Update Details</h1>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+<div class = "row">
+  <div class = "col-md-6 col-md-offset-3">
     <%= form_for(@employee, url: adminedit_path(:id => @employee.id), method: :patch) do |f| %>
       
-        <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control' %>
-  
-        <%= f.label :designation %>
-        <%= f.text_field :designation, class: 'form-control' %>
-  
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control' %>
-  
-        <%= f.label :phone %>
-        <%= f.text_field :phone, class: 'form-control' %>
-  
-        <%= f.label :gender %>
-        <%= f.text_field :gender, class: 'form-control', readonly:"readonly" %>
-  
-        <%= f.label :dateofjoin, "Date of Join"%>
-        <%= f.date_field :dateofjoin, class: 'form-control' %>
-  
-        <%= f.label :address %>
-        <%= f.text_field :address, class: 'form-control' %> 
-  
-        <%= f.label :active%><br/>
-        <%= f.check_box :active, id: 'active' %><br/>  
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :designation %>
+      <%= f.text_field :designation, class: 'form-control' %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :phone %>
+      <%= f.text_field :phone, class: 'form-control' %>
+
+      <%= f.label :gender %>
+      <%= f.text_field :gender, class: 'form-control', readonly:"readonly" %>
+
+      <%= f.label :dateofjoin, "Date of Join"%>
+      <%= f.date_field :dateofjoin, class: 'form-control' %>
+
+      <%= f.label :address %>
+      <%= f.text_field :address, class: 'form-control' %> 
+
+      <%= f.label :active%><br/>
+      <%= f.check_box :active, id: 'active' %><br/>  
 
       <%= f.submit "Update", class: "btn btn-primary" %>
       <br><br><%= link_to "Cancel", adminemployee_path, class: "btn btn-lg btn-primary can" %>

@@ -1,9 +1,10 @@
 <% provide(:user, 'employee') %>
-<%= @user.inspect %>
+
 <% if logged_in? %>
 <h1>Update Details</h1>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+<%= link_to "Update with facebook account", '/auth/facebook' if !params['fb'] %>
+<div class = "row">
+  <div class = "col-md-6 col-md-offset-3">
     <%= form_for(@employee) do |f| %>
 
       <%= f.label :id ,"Employee Id"%>

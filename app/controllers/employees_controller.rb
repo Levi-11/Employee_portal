@@ -1,20 +1,31 @@
 class EmployeesController < ApplicationController
+  
+  before_action :employee_logged_in, only: [:edit,
+                                            :update,
+                                            :home]
 
   def home
-    redirect_to root_path unless logged_in? && !admin_logged_in?
+    
     @employee = current_employee
   end
   
   def edit 
-     redirect_to root_path unless logged_in? && !admin_logged_in?
+     
      @employee = current_employee
     #  if FACEBOOK_CONFIG.blank?
       
       if params["fb"]
       
         @user = Employee.koala(request.env['omniauth.auth']['credentials'])
-        @employee.update_attributes(personalemail: @user['email'], 
-        dateofbirth: date_converter(@user['birthday']) )
+        if @user['email'] || @user['birthday']
+          @employee.update_attributes(personalemail: @user['email'], 
+          dateofbirth: date_converter(@user['birthday']) )
+          redirect_to edit_employee_path(@employee),notice: "successfully updated"
+        else
+          redirect_to edit_employee_path(@employee),notice: "updation failed"
+        end
+      else
+        render 'employees/edit'
       end
   end
   
