@@ -15,12 +15,12 @@ class EmployeesController < ApplicationController
     #  if FACEBOOK_CONFIG.blank?
       
       if params["fb"]
-      
+        
         @user = Employee.koala(request.env['omniauth.auth']['credentials'])
         if @user['email'] || @user['birthday']
           @employee.update_attributes(personalemail: @user['email'], 
           dateofbirth: date_converter(@user['birthday']) )
-          redirect_to edit_employee_path(@employee),notice: "successfully updated"
+          redirect_to home_path,notice: "successfully updated"
         else
           redirect_to edit_employee_path(@employee),notice: "updation failed"
         end

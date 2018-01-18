@@ -15905,3 +15905,124 @@ Processing by EmployeesController#edit as HTML
 Completed 200 OK in 1786ms (Views: 1783.7ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-01-18 10:46:28 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (29.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (6.8ms)
+Completed 200 OK in 923ms (Views: 912.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-01-18 10:46:57 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0dE1ad5tSQMuW0RrVspVRIX+smhi+5whJSl0qsnTvPydSTfmVeE/qhq7OfqStcYqt3nBXPs6qTOqzuNZ+MzZsA==", "session"=>{"email"=>"pooja92@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "pooja92@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/home
+Completed 302 Found in 141ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-18 10:46:57 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 68ms (Views: 65.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/employees/3/edit" for 127.0.0.1 at 2018-01-18 10:47:07 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (11.2ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 99ms (Views: 96.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-18 18:04:40 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (26.1ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (53.7ms)
+Completed 200 OK in 462ms (Views: 448.5ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-01-18 18:04:45 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CN+keVGjO/rux9ui2f0mfEGx+oPA3edJsGTFZ1yf7FZER6b22i9NU9onpjMdgrUSczaJt1kc0ls/g1KUbYCJGg==", "session"=>{"email"=>"levaguez@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "levaguez@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/home
+Completed 302 Found in 104ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-18 18:04:45 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 65ms (Views: 58.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/employees/5/edit" for 127.0.0.1 at 2018-01-18 18:04:47 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (12.3ms)
+  Rendered layouts/_shim.html.erb (1.6ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 96ms (Views: 93.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-18 18:04:49 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-18 18:04:50 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-18 18:04:50 +0530
+Started GET "/auth/facebook/callback?code=AQBQpYEgMKFqmpv1KGvnvQYUzqvV6LZJ9SkqIVCSfvlY8sTBMMJOHFEAlbCGP7WmF3P3URwt4XIXh0iSqTKFC95BpReh-NwKN8dSduaIZ43AHF4cvO5dozrH2ja3pHSUrSCdYI7Ilde8Zf7cx8SITM1bZcxxU-x53TkXadZgL6-QBpq4Tg8BzvMrwtKQPnsMZJOoxm-GYLfC5l9aNkF_g82k8zxKwWBQJdHKd39a_HPv47gsD3cOKCmkO3eTKH4JD6eJ-FMjqSmDCwenxHjwCgXDsR6hQbEhIqACMxi4_N43LA2Dk19qzQGSTjUjYyGsgQ8A1RJM596uk85c0d3mbfjbKtNO4yNLfEgj54EeNC7t9A&state=bbd6dd0d47e633d769a250427c97695b22578dbfad8f3a61" for 127.0.0.1 at 2018-01-18 18:04:51 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"code"=>"AQBQpYEgMKFqmpv1KGvnvQYUzqvV6LZJ9SkqIVCSfvlY8sTBMMJOHFEAlbCGP7WmF3P3URwt4XIXh0iSqTKFC95BpReh-NwKN8dSduaIZ43AHF4cvO5dozrH2ja3pHSUrSCdYI7Ilde8Zf7cx8SITM1bZcxxU-x53TkXadZgL6-QBpq4Tg8BzvMrwtKQPnsMZJOoxm-GYLfC5l9aNkF_g82k8zxKwWBQJdHKd39a_HPv47gsD3cOKCmkO3eTKH4JD6eJ-FMjqSmDCwenxHjwCgXDsR6hQbEhIqACMxi4_N43LA2Dk19qzQGSTjUjYyGsgQ8A1RJM596uk85c0d3mbfjbKtNO4yNLfEgj54EeNC7t9A", "state"=>"bbd6dd0d47e633d769a250427c97695b22578dbfad8f3a61", "fb"=>true}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE LOWER("employees"."email") = LOWER(?) AND ("employees"."id" != ?) LIMIT ?[0m  [["email", "levaguez@gmail.com"], ["id", 5], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."phone" = ? AND ("employees"."id" != ?) LIMIT ?[0m  [["phone", "8065462792"], ["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/home
+Completed 302 Found in 490ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-18 18:04:52 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 57ms (Views: 53.3ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2018-01-18 18:04:56 +0530
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UJQc1WidGY5LWCozBQKUmK+wHEuLDIW801Ow6FikSY4cDB5a4xFvJ3+4V6LBfQf2nTdvfxLNsK5ctCcbabsswg=="}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-01-18 18:04:56 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (7.6ms)
+Completed 200 OK in 77ms (Views: 72.2ms | ActiveRecord: 0.0ms)
+
+
