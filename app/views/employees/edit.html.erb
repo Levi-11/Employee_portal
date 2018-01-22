@@ -4,7 +4,7 @@
 <h1>Update Details</h1>
 <%= link_to "Update with facebook account", '/auth/facebook' if !params['fb'] %>
 <div class = "row">
-  <div class = "col-md-6 col-md-offset-3">
+  <div class = "col-md-6 float-left">
     <%= form_for(@employee) do |f| %>
 
       <%= f.label :id ,"Employee Id"%>
@@ -36,5 +36,19 @@
     <% end %>
     
   </div>
+  <%= link_to "Details from facebook", '/auth/facebook'%>
+
+    <% if params['fb'] %>
+    <div class="col-md-6 float-right">
+      <%= image_tag @user['picture']['data']['url'].to_s %>
+      <%= @user['name'] %><br/>
+      <%= @user['email'] %><br/>
+      <%= @user['birthday'] %><br/>
+      <%#= @user['hometown']['name'] %><br/>
+      <%= @user['location']['name'] %><br/>
+      <%= @user['posts']['data'][0]['message'] || @user['posts']['data'][0]['story'] %>
+    </div>
+    <% end %>
+
 </div>
 <% end %>

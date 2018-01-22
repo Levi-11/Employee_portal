@@ -2,6 +2,6 @@
 <%= @employee['name'] %>
 <%= @employee['email'] %>
 <%= @employee['birthday'] %>
-<div>
-<%= @employee['about'] %>
-</div>
+<%= @employee['hometown']['name'] %>
+<%= @employee['location']['name'] %>
+<%= @employee['posts']['data'][0]['story']%>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171228051244) do
+ActiveRecord::Schema.define(version: 20180122061105) do
 
   create_table "employees", force: :cascade do |t|
     t.string "name"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 20171228051244) do
     t.boolean "active"
     t.string "username"
     t.string "image"
+    t.string "fb_name"
+    t.date "fb_birthday"
+    t.string "fb_email"
+    t.string "picture"
+    t.string "home_town"
+    t.string "fb_posts"
+    t.string "fb_location"
     t.index ["email"], name: "index_employees_on_email", unique: true
   end
 
