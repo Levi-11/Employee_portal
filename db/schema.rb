@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180122061105) do
+ActiveRecord::Schema.define(version: 20180123045527) do
 
   create_table "employees", force: :cascade do |t|
     t.string "name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20180122061105) do
     t.string "home_town"
     t.string "fb_posts"
     t.string "fb_location"
+    t.boolean "fb_logged_in"
     t.index ["email"], name: "index_employees_on_email", unique: true
   end
 

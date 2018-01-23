@@ -2,7 +2,6 @@
 
 <% if logged_in? %>
 <h1>Update Details</h1>
-<%= link_to "Update with facebook account", '/auth/facebook' if !params['fb'] %>
 <div class = "row">
   <div class = "col-md-6 float-left">
     <%= form_for(@employee) do |f| %>
@@ -36,9 +35,13 @@
     <% end %>
     
   </div>
-  <%= link_to "Details from facebook", '/auth/facebook'%>
+  <% if @employee.fb_logged_in.nil? || @employee.fb_logged_in == false %>
+  <%= link_to  "Details from facebook", '/auth/facebook' ,:method => :%>
+  <% else %>
+  <%= link_to  "Logout from facebook", '/auth/facebook' %>
+  <% end %>
 
-    <% if params['fb'] %>
+  <% if params['fb'] && @employee.fb_logged_in == false %>
     <div class="col-md-6 float-right">
       <%= image_tag @user['picture']['data']['url'].to_s %>
       <%= @user['name'] %><br/>
@@ -48,7 +51,15 @@
       <%= @user['location']['name'] %><br/>
       <%= @user['posts']['data'][0]['message'] || @user['posts']['data'][0]['story'] %>
     </div>
-    <% end %>
+  <% end %>
 
 </div>
 <% end %>
+
+<script>
+  $(document).ready(function() {
+    $('#link').click(function () {
+        $("#link").text(($("#link").text() == 'Details from facebook') ? 'Logout from facebook' : 'Details from facebook');
+  });
+  });
+</script>
