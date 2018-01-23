@@ -36,9 +36,12 @@
     
   </div>
   <% if @employee.fb_logged_in.nil? || @employee.fb_logged_in == false %>
-  <%= link_to  "Details from facebook", '/auth/facebook' ,:method => :%>
+  <%= link_to  "Details from facebook", '/auth/facebook' %>
+  <% @employee.update_attributes(fb_logged_in: true) %>
+  
   <% else %>
   <%= link_to  "Logout from facebook", '/auth/facebook' %>
+  <% @employee.update_attributes(fb_logged_in: false) %>
   <% end %>
 
   <% if params['fb'] && @employee.fb_logged_in == false %>
