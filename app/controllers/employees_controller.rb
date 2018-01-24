@@ -15,21 +15,30 @@ class EmployeesController < ApplicationController
     if params["fb"]
       config = request.env['omniauth.auth']['credentials']
       @graph = Koala::Facebook::API.new(config['token'])
+      
       @user = @graph.get_object('me?fields=picture,name,email,birthday,hometown,location,posts')
-      @employee.update_attributes(fb_email: @user['email'],
+      
+      @employee.update_attributes(fb_logged_in: true,
+                                  fb_email: @user['email'],
                                   fb_birthday: date_converter(@user['birthday']),
                                   fb_name: @user['name'],
-                                  picture: @user['picture']['data']['url'],
+                                  picture: @user['picture'],
                                   home_town: @user['hometown']['name'],
                                   fb_location: @user['location']['name'],
                                   fb_posts: @user['posts']['data'][0]['story'] || @user['posts']['data'][0]['message'])
+      
+      # debugger
       #   flash[:success] = "Successfully Updated the Profile with facebook details!"
       #   redirect_to home_path
       # else
       #   redirect_to edit_employee_path(@employee), notice:"Updation failed"
       # end
-    else
-      render "edit"
+    # else
+    #   render "edit"
+    end
+    if params['logout']
+      @employee.update_attributes(fb_logged_in: false)
+      redirect_to edit_employee_path(@employee)
     end
   end
   

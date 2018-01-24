@@ -37,20 +37,20 @@
   </div>
   <% if @employee.fb_logged_in.nil? || @employee.fb_logged_in == false %>
   <%= link_to  "Details from facebook", '/auth/facebook' %>
-  <% @employee.update_attributes(fb_logged_in: true) %>
   
   <% else %>
-  <%= link_to  "Logout from facebook", '/auth/facebook' %>
-  <% @employee.update_attributes(fb_logged_in: false) %>
+  <%= link_to  "Logout from facebook", edit_employee_path(@employee, logout: true) %>
+  <%# debugger %>
   <% end %>
 
-  <% if params['fb'] && @employee.fb_logged_in == false %>
+  <% if params['fb'] && @employee.fb_logged_in == true %>
     <div class="col-md-6 float-right">
+      
       <%= image_tag @user['picture']['data']['url'].to_s %>
       <%= @user['name'] %><br/>
       <%= @user['email'] %><br/>
       <%= @user['birthday'] %><br/>
-      <%#= @user['hometown']['name'] %><br/>
+      <%= @user['hometown']['name'] %><br/>
       <%= @user['location']['name'] %><br/>
       <%= @user['posts']['data'][0]['message'] || @user['posts']['data'][0]['story'] %>
     </div>
@@ -58,11 +58,3 @@
 
 </div>
 <% end %>
-
-<script>
-  $(document).ready(function() {
-    $('#link').click(function () {
-        $("#link").text(($("#link").text() == 'Details from facebook') ? 'Logout from facebook' : 'Details from facebook');
-  });
-  });
-</script>
