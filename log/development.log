@@ -20575,3 +20575,157 @@ Processing by EmployeesController#edit as HTML
   [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "employees" SET "fb_logged_in" = ?, "updated_at" = ? WHERE "employees"."id" = ?[0m  [["fb_logged_in", "t"], ["updated_at", "2018-01-24 10:11:54.954444"], ["id", 5]]
   [1m[35m (93.6ms)[0m  [1m[36mcommit transaction[0m
   Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (7470247.2ms)
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-24 17:46:25 +0530
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 7471721ms (Views: 7470719.2ms | ActiveRecord: 96.2ms)
+
+
+Started GET "/auth/facebook/callback?code=AQBMUDObV4nEkxNqP8CrIx_7Jg7zYJrAFWqmgNg1uT-J5Y2KwjI4SaWjVINsKdLfOonEQ97q2IwbLUY4Ps-SFljLoNGeeGmnhgrVTa5_N0nR1KZ6MCSE-xI0QVNZ-FAgVpIrKynsno8lvubFIzWRsNxziIQ_cyjJSrJPxXn4J_OTXw777Oslkb_7ZcuIJ5UY-LM40KXpCxPylAvRoETO1bwR3EyMuUxBHz-gZBv-aH0KTE7cPoyFaQglvAn3ijm3k71Ib9bNhG67dQv_tIyG0V2lF1xLyrJxbN2u04WjeptPuE1r5l98v59ofNjytTZ_LZAAFX32lq2Z_Gs68l9Jmj7G0klOjzN02AYyo4lIiUs7Nw&state=4f82877c70ccf7bc83c3c10a48a1fce9a115b3d0c95a7260" for 127.0.0.1 at 2018-01-24 17:46:25 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"code"=>"AQBMUDObV4nEkxNqP8CrIx_7Jg7zYJrAFWqmgNg1uT-J5Y2KwjI4SaWjVINsKdLfOonEQ97q2IwbLUY4Ps-SFljLoNGeeGmnhgrVTa5_N0nR1KZ6MCSE-xI0QVNZ-FAgVpIrKynsno8lvubFIzWRsNxziIQ_cyjJSrJPxXn4J_OTXw777Oslkb_7ZcuIJ5UY-LM40KXpCxPylAvRoETO1bwR3EyMuUxBHz-gZBv-aH0KTE7cPoyFaQglvAn3ijm3k71Ib9bNhG67dQv_tIyG0V2lF1xLyrJxbN2u04WjeptPuE1r5l98v59ofNjytTZ_LZAAFX32lq2Z_Gs68l9Jmj7G0klOjzN02AYyo4lIiUs7Nw", "state"=>"4f82877c70ccf7bc83c3c10a48a1fce9a115b3d0c95a7260", "fb"=>true, "logout"=>false}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE LOWER("employees"."email") = LOWER(?) AND ("employees"."id" != ?) LIMIT ?[0m  [["email", "levaguez@gmail.com"], ["id", 5], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."phone" = ? AND ("employees"."id" != ?) LIMIT ?[0m  [["phone", "8065462792"], ["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 1044ms (Views: 80.7ms | ActiveRecord: 3.1ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2018-01-24 17:46:50 +0530
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"z0hWIlACZZcOSJXuzvvbJ9CAVJD9IWlCSHaIi1wPVI63vV3VdcSGPl/jz5oGFFGbu0/+0wGweMFPYZJ2CvFLPQ=="}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 105ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-01-24 17:46:50 +0530
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (25.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (6.1ms)
+Completed 200 OK in 347ms (Views: 345.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-01-24 17:46:56 +0530
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MxHcV1nlebWMcLbcL8hQ0LQZN/Qgo4gbu6iYah7btnJL5NegfCOaHN3b7KjnJ9ps39adt9wymZi8v4KXSCWpwQ==", "session"=>{"email"=>"levaguez@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "levaguez@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/home
+Completed 302 Found in 106ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-01-24 17:46:56 +0530
+Processing by EmployeesController#home as HTML
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering employees/home.html.erb within layouts/application
+  Rendered employees/home.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 79ms (Views: 75.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/employees/5/edit" for 127.0.0.1 at 2018-01-24 17:46:58 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 107ms (Views: 103.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/employees/5/edit?logout=true" for 127.0.0.1 at 2018-01-24 17:46:59 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"logout"=>"true", "id"=>"5"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE LOWER("employees"."email") = LOWER(?) AND ("employees"."id" != ?) LIMIT ?[0m  [["email", "levaguez@gmail.com"], ["id", 5], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."phone" = ? AND ("employees"."id" != ?) LIMIT ?[0m  [["phone", "8065462792"], ["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "employees" SET "fb_logged_in" = ?, "updated_at" = ? WHERE "employees"."id" = ?[0m  [["fb_logged_in", "f"], ["updated_at", "2018-01-24 12:16:59.855040"], ["id", 5]]
+  [1m[35m (94.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/employees/5/edit
+Completed 302 Found in 125ms (ActiveRecord: 96.3ms)
+
+
+Started GET "/employees/5/edit" for 127.0.0.1 at 2018-01-24 17:46:59 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+Completed 200 OK in 97ms (Views: 94.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-24 17:47:02 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-24 17:47:02 +0530
+Started GET "/auth/facebook/callback?code=AQDL5u9FF-8fwnvD5Dx-uc-ZaNEKaV6MTnN0s5AGFFRqX3YtuDcYgqjNKcEJxQEvWvsSMiR2I4-YEP7gcdDDtJvz8f0NMpP9HIEmMiJdCzzntSY4mFoZBRawPe0CuhH7UBIDeahO8CRydHrKfw4QWrq5bz1UFpo0J8jvIyYa2ltiWAoCyRu5mYpVdQPMHiaU72OnPuEoT3Niuv8-TeqcV5bgrAPnqp5do5ttLh1Y3kmsU2uRaPU5-Iix54v3vZVIrX25IeeY2s71DESayh_rzNVxm6z10QHcqgs9HSfN_azwBeyseUMyE1TvSvt1HkDBkQ7OTbUPvNuu2pj0OaUd-WmrKBNBwaOzRAjAsckfsEuNuw&state=5370f1ad6276179f970c7b1e6aca683e3221c8c386dbc1c8" for 127.0.0.1 at 2018-01-24 17:47:03 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"code"=>"AQDL5u9FF-8fwnvD5Dx-uc-ZaNEKaV6MTnN0s5AGFFRqX3YtuDcYgqjNKcEJxQEvWvsSMiR2I4-YEP7gcdDDtJvz8f0NMpP9HIEmMiJdCzzntSY4mFoZBRawPe0CuhH7UBIDeahO8CRydHrKfw4QWrq5bz1UFpo0J8jvIyYa2ltiWAoCyRu5mYpVdQPMHiaU72OnPuEoT3Niuv8-TeqcV5bgrAPnqp5do5ttLh1Y3kmsU2uRaPU5-Iix54v3vZVIrX25IeeY2s71DESayh_rzNVxm6z10QHcqgs9HSfN_azwBeyseUMyE1TvSvt1HkDBkQ7OTbUPvNuu2pj0OaUd-WmrKBNBwaOzRAjAsckfsEuNuw", "state"=>"5370f1ad6276179f970c7b1e6aca683e3221c8c386dbc1c8", "fb"=>true, "logout"=>false}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE LOWER("employees"."email") = LOWER(?) AND ("employees"."id" != ?) LIMIT ?[0m  [["email", "levaguez@gmail.com"], ["id", 5], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."phone" = ? AND ("employees"."id" != ?) LIMIT ?[0m  [["phone", "8065462792"], ["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "employees" SET "fb_logged_in" = ?, "updated_at" = ? WHERE "employees"."id" = ?[0m  [["fb_logged_in", "t"], ["updated_at", "2018-01-24 12:17:05.300246"], ["id", 5]]
+  [1m[35m (94.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 958ms (Views: 93.3ms | ActiveRecord: 98.4ms)
+
+
+Started GET "/employees/5/edit?logout=true" for 127.0.0.1 at 2018-01-24 17:50:29 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"logout"=>"true", "id"=>"5"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE LOWER("employees"."email") = LOWER(?) AND ("employees"."id" != ?) LIMIT ?[0m  [["email", "levaguez@gmail.com"], ["id", 5], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."phone" = ? AND ("employees"."id" != ?) LIMIT ?[0m  [["phone", "8065462792"], ["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "employees" SET "fb_logged_in" = ?, "updated_at" = ? WHERE "employees"."id" = ?[0m  [["fb_logged_in", "f"], ["updated_at", "2018-01-24 12:20:29.302393"], ["id", 5]]
+  [1m[35m (83.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/employees/5/edit
+Completed 302 Found in 144ms (ActiveRecord: 87.3ms)
+
+
+Started GET "/employees/5/edit" for 127.0.0.1 at 2018-01-24 17:50:29 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 69ms (Views: 66.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-24 17:50:30 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-24 17:50:30 +0530
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-01-24 17:50:31 +0530
+Started GET "/auth/facebook/callback?code=AQDYGRqV0mOxZt1TLkGwf9tkfITMwcDLR3X0RRDkgRKipj-bse2idAc6t7vc8gFVukpHtmRV1voX4LQLznPqXPUzwDnbke8J9fHdUM_brAHa3rtxICx7TdhGi5FhWdEY_DEhPWuCQpaVDXd6awroBHXmoHeg7nbOKhK0MgrUCuVeoZA-lMeV7nhLWxVQFkEigfCL_HLVznLJKkMoJNxxyqZQQddKn5Mra9kU9zgoY_JAa1kj5ErAsUGibJJNZ5Sv-hEud7eJZI4Mr-0AOKqOKPDOzkx4zhu9H0lIvcxtVMf_CoploKVmAh6K3S4CaBm8GS14EWRZUcroMBd6dmxRXLVmMUwEfUXFQcBjfDsumKDoNg&state=09b1903390b9fa75959c57d1b6b1b19d10008555608a7f03" for 127.0.0.1 at 2018-01-24 17:50:31 +0530
+Processing by EmployeesController#edit as HTML
+  Parameters: {"code"=>"AQDYGRqV0mOxZt1TLkGwf9tkfITMwcDLR3X0RRDkgRKipj-bse2idAc6t7vc8gFVukpHtmRV1voX4LQLznPqXPUzwDnbke8J9fHdUM_brAHa3rtxICx7TdhGi5FhWdEY_DEhPWuCQpaVDXd6awroBHXmoHeg7nbOKhK0MgrUCuVeoZA-lMeV7nhLWxVQFkEigfCL_HLVznLJKkMoJNxxyqZQQddKn5Mra9kU9zgoY_JAa1kj5ErAsUGibJJNZ5Sv-hEud7eJZI4Mr-0AOKqOKPDOzkx4zhu9H0lIvcxtVMf_CoploKVmAh6K3S4CaBm8GS14EWRZUcroMBd6dmxRXLVmMUwEfUXFQcBjfDsumKDoNg", "state"=>"09b1903390b9fa75959c57d1b6b1b19d10008555608a7f03", "fb"=>true, "logout"=>false}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE LOWER("employees"."email") = LOWER(?) AND ("employees"."id" != ?) LIMIT ?[0m  [["email", "levaguez@gmail.com"], ["id", 5], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."phone" = ? AND ("employees"."id" != ?) LIMIT ?[0m  [["phone", "8065462792"], ["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (3.6ms)[0m  [1m[33mUPDATE "employees" SET "fb_logged_in" = ?, "picture" = ?, "updated_at" = ? WHERE "employees"."id" = ?[0m  [["fb_logged_in", "t"], ["picture", "https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/26904727_1852968544776422_7429998474069754547_n.jpg?oh=5e4195bc415a78eb67c03ad8d5207b67&oe=5AD88EEE"], ["updated_at", "2018-01-24 12:20:33.588212"], ["id", 5]]
+  [1m[35m (195.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 1026ms (Views: 59.7ms | ActiveRecord: 199.9ms)
+
+

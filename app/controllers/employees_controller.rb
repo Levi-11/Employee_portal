@@ -16,16 +16,23 @@ class EmployeesController < ApplicationController
       config = request.env['omniauth.auth']['credentials']
       @graph = Koala::Facebook::API.new(config['token'])
       
-      @user = @graph.get_object('me?fields=picture,name,email,birthday,hometown,location,posts')
-      
+      @user = @graph.get_object('me?fields=picture,name,email,birthday,hometown,location,posts') || {}
+      @user = {} if @user.nil?
+      @user['birthday'] = date_converter(@user['birthday']) if !@user['birthday'].nil?
+      # debugger
+      # @user['hometown'] = {name: nil} if @user['hometown'].nil?
+      # @user['location'] = {name: nil} if @user['location'].nil?
+      # @user['posts'] = {data: [{story: nil, message: nil}]}  if (@user['posts'].nil? || @user['posts']['data'].nil? || @user['posts']['data'][0].nil?)
+      #@user['picture'] = {data: {url: nil}} if (@user['picture'].nil? || @user['picture'][data].nil? )
       @employee.update_attributes(fb_logged_in: true,
                                   fb_email: @user['email'],
-                                  fb_birthday: date_converter(@user['birthday']),
+                                  fb_birthday: @user['birthday'],
                                   fb_name: @user['name'],
-                                  picture: @user['picture'],
-                                  home_town: @user['hometown']['name'],
-                                  fb_location: @user['location']['name'],
-                                  fb_posts: @user['posts']['data'][0]['story'] || @user['posts']['data'][0]['message'])
+                                  picture: @user.fetch('picture',{}).fetch('data',{}).fetch('url',nil).to_s,
+                                  home_town: @user.fetch('hometown', {}).fetch('name', nil),
+                                  fb_location: @user.fetch('location', {}).fetch( 'name', nil),
+                                  fb_posts: @user.fetch('posts', {}).fetch('data', {}).fetch(0, {}).fetch('story', nil)
+                                  )
       
       # debugger
       #   flash[:success] = "Successfully Updated the Profile with facebook details!"

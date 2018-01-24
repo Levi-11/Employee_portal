@@ -46,13 +46,13 @@
   <% if params['fb'] && @employee.fb_logged_in == true %>
     <div class="col-md-6 float-right">
       
-      <%= image_tag @user['picture']['data']['url'].to_s %>
-      <%= @user['name'] %><br/>
-      <%= @user['email'] %><br/>
-      <%= @user['birthday'] %><br/>
-      <%= @user['hometown']['name'] %><br/>
-      <%= @user['location']['name'] %><br/>
-      <%= @user['posts']['data'][0]['message'] || @user['posts']['data'][0]['story'] %>
+      <%= image_tag @employee.picture %>
+      <%= @employee.fb_name %><br/>
+      <%= @employee.fb_email %><br/>
+      <%= @employee.fb_birthday %><br/>
+      <%= @employee.home_town %><br/>
+      <%= @employee.fb_location %><br/>
+      <%= @employee.fb_posts %>
     </div>
   <% end %>
 
