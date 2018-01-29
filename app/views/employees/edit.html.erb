@@ -43,7 +43,7 @@
   <%# debugger %>
   <% end %>
 
-  <% if params['fb'] && @employee.fb_logged_in == true %>
+  <% if @employee.fb_logged_in == true %>
     <div class="col-md-6 float-right">
       
       <%= image_tag @employee.picture %>

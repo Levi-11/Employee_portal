@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  
+  # skip_before_action :verify_authenticity_token, only: :create
   before_action :employee_logged_in, only: [:edit,
                                             :update,
                                             :home]
@@ -12,11 +12,12 @@ class EmployeesController < ApplicationController
   
   def edit 
     @employee = current_employee
+    
     if params["fb"]
       config = request.env['omniauth.auth']['credentials']
       @graph = Koala::Facebook::API.new(config['token'])
       
-      @user = @graph.get_object('me?fields=picture,name,email,birthday,hometown,location,posts') || {}
+      @user = @graph.get_object('me?fields=picture,name,email,birthday,hometown,location,posts')
       @user = {} if @user.nil?
       @user['birthday'] = date_converter(@user['birthday']) if !@user['birthday'].nil?
       # debugger
@@ -42,6 +43,7 @@ class EmployeesController < ApplicationController
       # end
     # else
     #   render "edit"
+    redirect_to edit_employee_path(@employee)
     end
     if params['logout']
       @employee.update_attributes(fb_logged_in: false)
